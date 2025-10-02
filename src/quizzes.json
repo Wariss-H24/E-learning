@@ -1,0 +1,1779 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "title": "Quiz sur les bases du HTML",
+      "minimum_score": 4,
+      "success_message": "Félicitations ! Vous maîtrisez les fondamentaux du HTML !",
+      "failure_message": "Dommage ! N'hésitez pas à réviser les leçons sur la structure des documents et les balises.",
+      "questions": [
+        {
+          "question": "Que signifie l'acronyme HTML ?",
+          "choices": [
+            "Hyperlinks and Text Markup Language",
+            "Hyper Text Markup Language",
+            "Home Tool Markup Language",
+            "Hyper Text Making Links"
+          ],
+          "correct_answer": "Hyper Text Markup Language"
+        },
+        {
+          "question": "Quelle balise est utilisée pour créer un paragraphe en HTML ?",
+          "choices": ["<p>", "<par>", "<paragraph>", "<text>"],
+          "correct_answer": "<p>"
+        },
+        {
+          "question": "Quel attribut est utilisé pour spécifier l'URL d'une image dans la balise <img> ?",
+          "choices": ["href", "src", "link", "url"],
+          "correct_answer": "src"
+        },
+        {
+          "question": "Quelle balise est utilisée pour créer un lien hypertexte ?",
+          "choices": ["<link>", "<a>", "<href>", "<hyperlink>"],
+          "correct_answer": "<a>"
+        },
+        {
+          "question": "Quelle est la balise racine qui englobe tout le contenu HTML d'une page ?",
+          "choices": ["<body>", "<html>", "<root>", "<document>"],
+          "correct_answer": "<html>"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Quiz sur le langage de programmation Go",
+      "minimum_score": 7,
+      "success_message": "Félicitations ! Vous maîtrisez les concepts fondamentaux de Go !",
+      "failure_message": "Dommage ! Continuez à pratiquer pour améliorer votre compréhension de la concurrence et de la syntaxe Go.",
+      "questions": [
+        {
+          "question": "Quelle entreprise a initialement développé le langage Go ?",
+          "choices": ["Google", "Microsoft", "Facebook", "Apple"],
+          "correct_answer": "Google"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour déclarer une variable en Go ?",
+          "choices": ["var", "let", "const", "variable"],
+          "correct_answer": "var"
+        },
+        {
+          "question": "Comment déclare-t-on une fonction en Go ?",
+          "choices": [
+            "func nomFonction()",
+            "function nomFonction()",
+            "def nomFonction()",
+            "fn nomFonction()"
+          ],
+          "correct_answer": "func nomFonction()"
+        },
+        {
+          "question": "Quel est le nom des fonctions légères de concurrence en Go ?",
+          "choices": ["Goroutines", "Threads", "Coroutines", "Async functions"],
+          "correct_answer": "Goroutines"
+        },
+        {
+          "question": "Comment sont généralement gérées les erreurs de façon idiomatique en Go ?",
+          "choices": [
+            "En les retournant comme valeur de retour",
+            "Avec des blocs try/catch",
+            "En les ignorant",
+            "Avec des exceptions"
+          ],
+          "correct_answer": "En les retournant comme valeur de retour"
+        },
+        {
+          "question": "Quel type de données permet de définir un contrat pour les méthodes dans Go ?",
+          "choices": ["Interface", "Struct", "Map", "Slice"],
+          "correct_answer": "Interface"
+        },
+        {
+          "question": "Quel package standard est utilisé pour créer des serveurs HTTP en Go ?",
+          "choices": ["net/http", "web/http", "http/server", "go/web"],
+          "correct_answer": "net/http"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour créer un canal (channel) en Go ?",
+          "choices": ["chan", "channel", "makechan", "pipe"],
+          "correct_answer": "chan"
+        },
+        {
+          "question": "Quelle commande est utilisée pour exécuter des tests en Go ?",
+          "choices": ["go test", "go run", "go check", "go verify"],
+          "correct_answer": "go test"
+        },
+        {
+          "question": "Quelle est la particularité de la déclaration de variable avec `:=` ?",
+          "choices": [
+            "Elle déclare et initialise une variable en inférant son type",
+            "Elle déclare une constante",
+            "Elle importe un package",
+            "Elle crée un pointeur"
+          ],
+          "correct_answer": "Elle déclare et initialise une variable en inférant son type"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Quiz sur Kotlin pour Android",
+      "minimum_score": 6,
+      "success_message": "Excellent ! Vous êtes sur la bonne voie pour développer des applications Android avec Kotlin !",
+      "failure_message": "Pas mal ! Revoyez les concepts de base de Kotlin et le cycle de vie des Activities.",
+      "questions": [
+        {
+          "question": "Kotlin est un langage conçu pour être...",
+          "choices": [
+            "100% interopérable avec Java",
+            "Une alternative radicale à Java",
+            "Uniquement pour le développement backend",
+            "Un langage de bas niveau"
+          ],
+          "correct_answer": "100% interopérable avec Java"
+        },
+        {
+          "question": "Comment déclare-t-on une variable non-nulle (non-nullable) en Kotlin ?",
+          "choices": ["var name: String", "var name: String!", "var name: String?", "var name: String!!"],
+          "correct_answer": "var name: String"
+        },
+        {
+          "question": "Quel est l'EDI (Environnement de Développement Intégré) recommandé pour le développement Android ?",
+          "choices": ["Android Studio", "Visual Studio Code", "IntelliJ IDEA", "Eclipse"],
+          "correct_answer": "Android Studio"
+        },
+        {
+          "question": "Qu'est-ce qu'une 'Activity' dans le développement Android ?",
+          "choices": [
+            "Un composant qui représente un écran avec une interface utilisateur",
+            "Une fonction asynchrone",
+            "Une base de données",
+            "Un fichier de layout"
+          ],
+          "correct_answer": "Un composant qui représente un écran avec une interface utilisateur"
+        },
+        {
+          "question": "Quel mot-clé Kotlin est utilisé pour déclarer une fonction ?",
+          "choices": ["fun", "function", "def", "fn"],
+          "correct_answer": "fun"
+        },
+        {
+          "question": "Quel composant Android est utilisé pour afficher une liste déroulante d'éléments de manière efficace ?",
+          "choices": ["RecyclerView", "ListView", "ScrollView", "GridLayout"],
+          "correct_answer": "RecyclerView"
+        },
+        {
+          "question": "Comment gère-t-on les valeurs potentiellement nulles de façon safe en Kotlin ?",
+          "choices": [
+            "Avec l'opérateur safe call `?.`",
+            "En utilisant toujours `!!`",
+            "En les ignorant",
+            "Avec des blocs try/catch"
+          ],
+          "correct_answer": "Avec l'opérateur safe call `?.`"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour définir une donnée immuable (read-only) en Kotlin ?",
+          "choices": ["val", "var", "const", "let"],
+          "correct_answer": "val"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Quiz sur Machine Learning avec Scikit-Learn",
+      "minimum_score": 5,
+      "success_message": "Impressionnant ! Vous avez saisi les concepts clés du Machine Learning avec Scikit-Learn !",
+      "failure_message": "Le Machine Learning demande de la pratique ! Revenez sur les types d'apprentissage et le preprocessing.",
+      "questions": [
+        {
+          "question": "Scikit-Learn est une bibliothèque Python pour...",
+          "choices": [
+            "Le Machine Learning",
+            "La visualisation de données",
+            "Le développement web",
+            "L'analyse statistique avancée"
+          ],
+          "correct_answer": "Le Machine Learning"
+        },
+        {
+          "question": "Quel type d'apprentissage utilise des données étiquetées ?",
+          "choices": [
+            "L'apprentissage supervisé",
+            "L'apprentissage non supervisé",
+            "L'apprentissage par renforcement",
+            "Le deep learning"
+          ],
+          "correct_answer": "L'apprentissage supervisé"
+        },
+        {
+          "question": "Quel algorithme est typiquement utilisé pour un problème de classification ?",
+          "choices": [
+            "Régression logistique",
+            "Régression linéaire",
+            "K-Means",
+            "Algorithme des k plus proches voisins (KNN)"
+          ],
+          "correct_answer": "Régression logistique"
+        },
+        {
+          "question": "Quelle technique est cruciale pour diviser les données en ensemble d'entraînement et de test ?",
+          "choices": [
+            "Train-Test Split",
+            "Data Wrangling",
+            "Feature Engineering",
+            "Hyperparameter Tuning"
+          ],
+          "correct_answer": "Train-Test Split"
+        },
+        {
+          "question": "Qu'est-ce que le 'feature engineering' ?",
+          "choices": [
+            "Le processus de création de nouvelles features ou de modification de features existantes",
+            "La sélection du modèle le plus performant",
+            "La visualisation des données",
+            "L'entraînement du modèle final"
+          ],
+          "correct_answer": "Le processus de création de nouvelles features ou de modification de features existantes"
+        },
+        {
+          "question": "Quel module Scikit-Learn est utilisé pour prétraiter les données (scaling, encodage) ?",
+          "choices": ["sklearn.preprocessing", "sklearn.features", "sklearn.clean", "sklearn.utils"],
+          "correct_answer": "sklearn.preprocessing"
+        },
+        {
+          "question": "Le K-Means est un algorithme célèbre pour...",
+          "choices": [
+            "Le clustering (groupement)",
+            "La classification d'images",
+            "La régression",
+            "La prédiction de séries temporelles"
+          ],
+          "correct_answer": "Le clustering (groupement)"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Quiz sur Adobe XD",
+      "minimum_score": 5,
+      "success_message": "Bravo ! Vous maîtrisez les outils et concepts de base d'Adobe XD !",
+      "failure_message": "Le design demande de la pratique ! Revenez sur les prototypes et les composants.",
+      "questions": [
+        {
+          "question": "Adobe XD est principalement utilisé pour...",
+          "choices": [
+            "Le design et le prototypage d'interfaces utilisateur (UI/UX)",
+            "La retouche photo avancée",
+            "La modélisation 3D",
+            "L'édition vidéo"
+          ],
+          "correct_answer": "Le design et le prototypage d'interfaces utilisateur (UI/UX)"
+        },
+        {
+          "question": "Quelle fonctionnalité permet de créer des éléments d'interface réutilisables ?",
+          "choices": ["Les Composants", "Les Styles", "Les Symbols", "Les Assets"],
+          "correct_answer": "Les Composants"
+        },
+        {
+          "question": "Quel outil est utilisé pour créer des liens interactifs entre les artboards ?",
+          "choices": ["Le mode Prototype", "Le mode Design", "L'outil Plume", "Le plugin"],
+          "correct_answer": "Le mode Prototype"
+        },
+        {
+          "question": "Qu'est-ce qu'un 'Artboard' dans Adobe XD ?",
+          "choices": [
+            "Une zone de travail représentant un écran ou un device",
+            "Une palette de couleurs",
+            "Un pinceau personnalisé",
+            "Un type de calque"
+          ],
+          "correct_answer": "Une zone de travail représentant un écran ou un device"
+        },
+        {
+          "question": "Que permet de faire la fonction 'Repeat Grid' ?",
+          "choices": [
+            "Dupliquer rapidement un élément comme une liste ou une grille",
+            "Créer des dégradés de couleurs",
+            "Automatiquement aligner des objets",
+            "Générer du code CSS"
+          ],
+          "correct_answer": "Dupliquer rapidement un élément comme une liste ou une grille"
+        },
+        {
+          "question": "Que signifie 'UI' dans le contexte du design ?",
+          "choices": [
+            "User Interface (Interface Utilisateur)",
+            "User Interaction (Interaction Utilisateur)",
+            "Universal Index",
+            "Unique Identity"
+          ],
+          "correct_answer": "User Interface (Interface Utilisateur)"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "title": "Quiz sur l'Email Marketing",
+      "minimum_score": 5,
+      "success_message": "Félicitations ! Vous connaissez les meilleures pratiques de l'email marketing !",
+      "failure_message": "Presque ! Revoyez les stratégies de collecte et les techniques de copywriting.",
+      "questions": [
+        {
+          "question": "Quel est l'objectif principal d'une stratégie d'email marketing ?",
+          "choices": [
+            "Nourrir la relation avec son audience et convertir",
+            "Vendre directement dès le premier email",
+            "Remplacer les réseaux sociaux",
+            "Augmenter le trafic organique uniquement"
+          ],
+          "correct_answer": "Nourrir la relation avec son audience et convertir"
+        },
+        {
+          "question": "Qu'est-ce qu'une 'lead magnet' ?",
+          "choices": [
+            "Une offre gratuite et valueante pour inciter à l'inscription",
+            "Un email promotionnel agressif",
+            "Un outil d'analyse de campagne",
+            "Un type de spam"
+          ],
+          "correct_answer": "Une offre gratuite et valueante pour inciter à l'inscription"
+        },
+        {
+          "question": "Qu'est-ce qu'une séquence email automatisée ?",
+          "choices": [
+            "Une série d'emails envoyés automatiquement basés sur un déclencheur",
+            "Un email envoyé manuellement chaque jour",
+            "La liste de tous ses contacts",
+            "Un rapport de performance"
+          ],
+          "correct_answer": "Une série d'emails envoyés automatiquement basés sur un déclencheur"
+        },
+        {
+          "question": "Quel est un indicateur clé (KPI) important pour mesurer la performance d'un email ?",
+          "choices": ["Taux d'ouverture (Open Rate)", "Nombre de mots", "Couleur du bouton", "Taille de l'image"],
+          "correct_answer": "Taux d'ouverture (Open Rate)"
+        },
+        {
+          "question": "Qu'est-ce que l'A/B Testing permet de faire dans une campagne email ?",
+          "choices": [
+            "Tester deux versions différentes pour optimiser la performance",
+            "Envoyer un email à deux listes différentes",
+            "Supprimer les emails invalides",
+            "Crypter le contenu des emails"
+          ],
+          "correct_answer": "Tester deux versions différentes pour optimiser la performance"
+        },
+        {
+          "question": "La 'délivrabilité' d'un email fait référence à...",
+          "choices": [
+            "Sa capacité à atteindre la boîte de réception du destinataire",
+            "Sa vitesse d'envoi",
+            "Son design responsive",
+            "Son taux de conversion"
+          ],
+          "correct_answer": "Sa capacité à atteindre la boîte de réception du destinataire"
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "title": "Quiz sur la Gestion de Projet Agile",
+      "minimum_score": 5,
+      "success_message": "Excellent ! Les principes Agile et Scrum n'ont plus de secret pour vous !",
+      "failure_message": "L'Agilité est un état d'esprit ! Replongez-vous dans le manifeste Agile et les rôles Scrum.",
+      "questions": [
+        {
+          "question": "Quel est le principal objectif des méthodologies Agile ?",
+          "choices": [
+            "Livrer de la valeur au client rapidement et s'adapter au changement",
+            "Suivre un plan rigide du début à la fin",
+            "Documenter exhaustivement chaque étape",
+            "Micro-manager chaque membre de l'équipe"
+          ],
+          "correct_answer": "Livrer de la valeur au client rapidement et s'adapter au changement"
+        },
+        {
+          "question": "Quel est le rôle du 'Product Owner' dans Scrum ?",
+          "choices": [
+            "Représenter les intérêts des parties prenantes et maximiser la valeur du produit",
+            "Animer les réunions quotidiennes",
+            "Résoudre les blocages techniques",
+            "Écrire tout le code du projet"
+          ],
+          "correct_answer": "Représenter les intérêts des parties prenantes et maximiser la valeur du produit"
+        },
+        {
+          "question": "Qu'est-ce qu'un 'Sprint' en Scrum ?",
+          "choices": [
+            "Une itération de durée fixe (généralement 2-4 semaines) pour livrer un incrément de produit",
+            "Une réunion de planification",
+            "Un outil de reporting",
+            "Un bug critique"
+          ],
+          "correct_answer": "Une itération de durée fixe (généralement 2-4 semaines) pour livrer un incrément de produit"
+        },
+        {
+          "question": "Quelle réunion a lieu quotidiennement pour synchroniser l'équipe ?",
+          "choices": ["Le Daily Stand-up", "La Rétrospective", "Le Planning Poker", "La Revue de Sprint"],
+          "correct_answer": "Le Daily Stand-up"
+        },
+        {
+          "question": "Quel artefact Scrum représente le travail planifié pour le prochain Sprint ?",
+          "choices": ["Le Sprint Backlog", "Le Product Backlog", "L'Increment", "Le Tableau Kanban"],
+          "correct_answer": "Le Sprint Backlog"
+        },
+        {
+          "question": "Contrairement à Scrum, Kanban se concentre sur...",
+          "choices": [
+            "Visualiser le flux de travail et limiter le travail en cours (WIP)",
+            "Les sprints de durée fixe",
+            "Les rôles stricts (PO, SM)",
+            "Les cérémonies obligatoires"
+          ],
+          "correct_answer": "Visualiser le flux de travail et limiter le travail en cours (WIP)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Quiz sur CSS Avancé : Flexbox et Grid",
+      "minimum_score": 4,
+      "success_message": "Parfait ! Vous maîtrisez la mise en page moderne avec Flexbox et Grid !",
+      "failure_message": "La pratique est la clé du CSS ! Entraînez-vous à aligner et à structurer vos pages.",
+      "questions": [
+        {
+          "question": "Quelle propriété CSS est utilisée pour définir un conteneur Flexbox ?",
+          "choices": ["display: flex;", "display: grid;", "display: block;", "display: inline-flex;"],
+          "correct_answer": "display: flex;"
+        },
+        {
+          "question": "Quelle propriété Flexbox permet d'aligner les éléments sur l'axe principal ?",
+          "choices": ["justify-content", "align-items", "flex-direction", "flex-wrap"],
+          "correct_answer": "justify-content"
+        },
+        {
+          "question": "Quelle propriété CSS est utilisée pour définir un conteneur Grid ?",
+          "choices": ["display: grid;", "display: flex;", "display: block;", "display: inline-grid;"],
+          "correct_answer": "display: grid;"
+        },
+        {
+          "question": "Quelle propriété Grid permet de définir le nombre et la taille des colonnes ?",
+          "choices": ["grid-template-columns", "grid-column-gap", "grid-auto-rows", "grid-area"],
+          "correct_answer": "grid-template-columns"
+        },
+        {
+          "question": "Quelle unité CSS, introduite avec Grid, représente une fraction de l'espace disponible ?",
+          "choices": ["fr", "px", "%", "em"],
+          "correct_answer": "fr"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Quiz sur JavaScript ES6+",
+      "minimum_score": 5,
+      "success_message": "Fantastique ! Les fonctionnalités modernes de JavaScript n'ont plus de secret pour vous !",
+      "failure_message": "JavaScript évolue constamment ! Revenez sur les promesses et la déstructuration.",
+      "questions": [
+        {
+          "question": "Quel mot-clé est introduit en ES6 pour déclarer une variable à portée de bloc ?",
+          "choices": ["let", "var", "const", "function"],
+          "correct_answer": "let"
+        },
+        {
+          "question": "Comment écrit-on une 'arrow function' (fonction fléchée) en ES6 ?",
+          "choices": ["const maFunc = () => {}", "function maFunc() => {}", "const maFunc => {}", "def maFunc() => {}"],
+          "correct_answer": "const maFunc = () => {}"
+        },
+        {
+          "question": "Quelle syntaxe permet de déstructurer (destructure) un objet pour extraire ses propriétés ?",
+          "choices": ["const { prop1, prop2 } = monObjet;", "const [prop1, prop2] = monObjet;", "const prop1 = monObjet[0];", "const prop1 = monObjet.prop1;"],
+          "correct_answer": "const { prop1, prop2 } = monObjet;"
+        },
+        {
+          "question": "Quelle syntaxe permet de créer des chaînes de caractères avec des expressions interpolées (template strings) ?",
+          "choices": ["`Texte ${variable}`", "'Texte ' + variable", "\"Texte \" + variable", "`Texte $variable`"],
+          "correct_answer": "`Texte ${variable}`"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour gérer les opérations asynchrones de manière synchrone ?",
+          "choices": ["async/await", "callback", "promise.then", "setTimeout"],
+          "correct_answer": "async/await"
+        },
+        {
+          "question": "Quel est le but des 'Modules ES6' (import/export) ?",
+          "choices": [
+            "Organiser le code en fichiers multiples réutilisables",
+            "Déclarer des variables globales",
+            "Remplacer les fonctions",
+            "Optimiser les performances des boucles"
+          ],
+          "correct_answer": "Organiser le code en fichiers multiples réutilisables"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Quiz sur Vue.js pour débutants",
+      "minimum_score": 5,
+      "success_message": "Génial ! Vous avez compris les concepts de base de Vue.js !",
+      "failure_message": "Vue.js est puissant ! Revenez sur les composants et la gestion d'état.",
+      "questions": [
+        {
+          "question": "Vue.js est un framework JavaScript progressif utilisé pour...",
+          "choices": [
+            "Construire des interfaces utilisateur et des applications web single-page (SPA)",
+            "Créer des bases de données",
+            "Développer des applications backend",
+            "Remplacer HTML et CSS"
+          ],
+          "correct_answer": "Construire des interfaces utilisateur et des applications web single-page (SPA)"
+        },
+        {
+          "question": "Quelle directive Vue.js est utilisée pour lier un attribut HTML à une donnée ?",
+          "choices": ["v-bind (ou :)", "v-model", "v-if", "v-for"],
+          "correct_answer": "v-bind (ou :)"
+        },
+        {
+          "question": "Quelle directive est utilisée pour créer une boucle sur un tableau ?",
+          "choices": ["v-for", "v-if", "v-while", "v-loop"],
+          "correct_answer": "v-for"
+        },
+        {
+          "question": "Quelle directive est utilisée pour lier une input à une donnée (two-way binding) ?",
+          "choices": ["v-model", "v-bind", "v-value", "v-input"],
+          "correct_answer": "v-model"
+        },
+        {
+          "question": "Où sont stockées les données réactives dans un composant Vue ?",
+          "choices": ["Dans la fonction `data()`", "Dans la fonction `methods()`", "Dans `computed`", "Dans `props`"],
+          "correct_answer": "Dans la fonction `data()`"
+        },
+        {
+          "question": "Comment un composant enfant reçoit-il des données d'un composant parent ?",
+          "choices": ["Via les `props`", "Via `data`", "Via `$emit`", "Via les `refs`"],
+          "correct_answer": "Via les `props`"
+        },
+        {
+          "question": "Quel package officiel est utilisé pour le routage dans une application Vue.js ?",
+          "choices": ["Vue Router", "Vue Route", "Vuex Router", "Vue Navigation"],
+          "correct_answer": "Vue Router"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Quiz: React de A à Z",
+      "minimum_score": 6,
+      "success_message": "Félicitations! Vous maîtrisez les concepts fondamentaux de React!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur React.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que JSX dans React?",
+          "choices": [
+            "Un langage de programmation séparé",
+            "Une syntaxe extension de JavaScript",
+            "Un compilateur pour React",
+            "Un type de base de données"
+          ],
+          "correct_answer": "Une syntaxe extension de JavaScript"
+        },
+        {
+          "question": "Quel hook React est utilisé pour gérer l'état local?",
+          "choices": [
+            "useEffect",
+            "useState",
+            "useContext",
+            "useReducer"
+          ],
+          "correct_answer": "useState"
+        },
+        {
+          "question": "Comment passe-t-on des données d'un composant parent à un composant enfant?",
+          "choices": [
+            "Avec le state",
+            "Avec les props",
+            "Avec les refs",
+            "Avec le context"
+          ],
+          "correct_answer": "Avec les props"
+        },
+        {
+          "question": "Quelle méthode de cycle de vie est équivalente à useEffect avec un tableau de dépendances vide?",
+          "choices": [
+            "componentDidUpdate",
+            "componentWillUnmount",
+            "componentDidMount",
+            "shouldComponentUpdate"
+          ],
+          "correct_answer": "componentDidMount"
+        },
+        {
+          "question": "Qu'est-ce que React Router?",
+          "choices": [
+            "Un système de gestion d'état",
+            "Une bibliothèque de navigation",
+            "Un compilateur JSX",
+            "Un serveur backend"
+          ],
+          "correct_answer": "Une bibliothèque de navigation"
+        },
+        {
+          "question": "Quel hook permet d'effectuer des effets de bord?",
+          "choices": [
+            "useState",
+            "useEffect",
+            "useCallback",
+            "useMemo"
+          ],
+          "correct_answer": "useEffect"
+        },
+        {
+          "question": "Comment optimiser les performances en évitant des rendus inutiles?",
+          "choices": [
+            "Avec React.memo",
+            "Avec useReducer",
+            "Avec useRef",
+            "Avec useContext"
+          ],
+          "correct_answer": "Avec React.memo"
+        },
+        {
+          "question": "Quelle est la différence entre état et props?",
+          "choices": [
+            "Les props sont mutables, l'état ne l'est pas",
+            "L'état est mutable, les props sont en lecture seule",
+            "Ils sont identiques",
+            "Les props sont internes au composant"
+          ],
+          "correct_answer": "L'état est mutable, les props sont en lecture seule"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Quiz: Laravel avancé",
+      "minimum_score": 7,
+      "success_message": "Félicitations! Vous maîtrisez les concepts avancés de Laravel!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur Laravel.",
+      "questions": [
+        {
+          "question": "Qu'est-ce qu'un middleware dans Laravel?",
+          "choices": [
+            "Un modèle de base de données",
+            "Un contrôleur de requêtes HTTP",
+            "Une vue Blade",
+            "Une migration"
+          ],
+          "correct_answer": "Un contrôleur de requêtes HTTP"
+        },
+        {
+          "question": "Comment crée-t-on une relation many-to-many avec Eloquent?",
+          "choices": [
+            "hasOne",
+            "belongsTo",
+            "hasMany",
+            "belongsToMany"
+          ],
+          "correct_answer": "belongsToMany"
+        },
+        {
+          "question": "Quelle commande Artisan crée un nouveau contrôleur?",
+          "choices": [
+            "php artisan make:model",
+            "php artisan make:controller",
+            "php artisan make:view",
+            "php artisan make:middleware"
+          ],
+          "correct_answer": "php artisan make:controller"
+        },
+        {
+          "question": "Qu'est-ce que l'injection de dépendances dans Laravel?",
+          "choices": [
+            "Un système de templates",
+            "Un mécanisme de résolution automatique des dépendances",
+            "Une méthode de validation",
+            "Un système de cache"
+          ],
+          "correct_answer": "Un mécanisme de résolution automatique des dépendances"
+        },
+        {
+          "question": "Comment définir une route API RESTful dans Laravel?",
+          "choices": [
+            "Route::view()",
+            "Route::apiResource()",
+            "Route::get()",
+            "Route::redirect()"
+          ],
+          "correct_answer": "Route::apiResource()"
+        },
+        {
+          "question": "Qu'est-ce que les collections Laravel?",
+          "choices": [
+            "Des wrappers orientés objet pour les tableaux",
+            "Des classes de base de données",
+            "Des systèmes de fichiers",
+            "Des modèles Eloquent"
+          ],
+          "correct_answer": "Des wrappers orientés objet pour les tableau"
+        },
+        {
+          "question": "Comment planifier une tâche dans Laravel?",
+          "choices": [
+            "Avec les Events",
+            "Avec les Listeners",
+            "Avec le Scheduler",
+            "Avec les Jobs"
+          ],
+          "correct_answer": "Avec le Scheduler"
+        },
+        {
+          "question": "Quel est le système de template par défaut de Laravel?",
+          "choices": [
+            "Twig",
+            "Blade",
+            "Smarty",
+            "Pug"
+          ],
+          "correct_answer": "Blade"
+        },
+        {
+          "question": "Comment gérer les erreurs de validation dans les formulaires?",
+          "choices": [
+            "Avec les règles dans le modèle",
+            "Avec les Form Requests",
+            "Avec les middlewares",
+            "Avec les events"
+          ],
+          "correct_answer": "Avec les Form Requests"
+        },
+        {
+          "question": "Qu'est-ce que Tinker dans Laravel?",
+          "choices": [
+            "Un débogueur",
+            "Un REPL (Read-Eval-Print Loop)",
+            "Un compilateur",
+            "Un analyseur de performance"
+          ],
+          "correct_answer": "Un REPL (Read-Eval-Print Loop)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Quiz: Node.js et Express",
+      "minimum_score": 4,
+      "success_message": "Félicitations! Vous maîtrisez les concepts de Node.js et Express!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur Node.js et Express.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que Node.js?",
+          "choices": [
+            "Un framework frontend",
+            "Un environnement d'exécution JavaScript côté serveur",
+            "Un langage de programmation",
+            "Une base de données"
+          ],
+          "correct_answer": "Un environnement d'exécution JavaScript côté serveur"
+        },
+        {
+          "question": "Comment initialise-t-on un projet Node.js?",
+          "choices": [
+            "node init",
+            "npm start",
+            "npm init",
+            "node create"
+          ],
+          "correct_answer": "npm init"
+        },
+        {
+          "question": "Qu'est-ce qu'un middleware dans Express?",
+          "choices": [
+            "Une fonction qui a accès aux objets request et response",
+            "Un système de template",
+            "Une base de données",
+            "Un package npm"
+          ],
+          "correct_answer": "Une fonction qui a accès aux objets request et response"
+        },
+        {
+          "question": "Comment installe-t-on Express dans un projet?",
+          "choices": [
+            "node install express",
+            "npm add express",
+            "npm install express",
+            "node get express"
+          ],
+          "correct_answer": "npm install express"
+        },
+        {
+          "question": "Quelle méthode Express utilise-t-on pour gérer les requêtes POST?",
+          "choices": [
+            "app.get()",
+            "app.post()",
+            "app.put()",
+            "app.delete()"
+          ],
+          "correct_answer": "app.post()"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Quiz: API REST avec Django",
+      "minimum_score": 6,
+      "success_message": "Félicitations! Vous maîtrisez les concepts des API REST avec Django!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur Django REST Framework.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que Django REST Framework?",
+          "choices": [
+            "Un ORM pour Django",
+            "Un framework pour construire des APIs Web",
+            "Un système de template",
+            "Un serveur web"
+          ],
+          "correct_answer": "Un framework pour construire des APIs Web"
+        },
+        {
+          "question": "Qu'est-ce qu'un serializer dans DRF?",
+          "choices": [
+            "Un convertisseur de données",
+            "Un système d'authentification",
+            "Un routeur d'URLs",
+            "Un middleware"
+          ],
+          "correct_answer": "Un convertisseur de données"
+        },
+        {
+          "question": "Quelle classe de vue est la plus utilisée pour les APIs dans DRF?",
+          "choices": [
+            "View",
+            "TemplateView",
+            "APIView",
+            "ListView"
+          ],
+          "correct_answer": "APIView"
+        },
+        {
+          "question": "Comment crée-t-on une vue qui permet toutes les opérations CRUD?",
+          "choices": [
+            "Avec une ViewSet",
+            "Avec une TemplateView",
+            "Avec une FormView",
+            "Avec une RedirectView"
+          ],
+          "correct_answer": "Avec une ViewSet"
+        },
+        {
+          "question": "Qu'est-ce que les routers dans DRF?",
+          "choices": [
+            "Des équipements réseau",
+            "Un système qui automatise le routage des URLs",
+            "Des middlewares",
+            "Des serializers"
+          ],
+          "correct_answer": "Un système qui automatise le routage des URLs"
+        },
+        {
+          "question": "Comment ajoute-t-on l'authentification JWT dans DRF?",
+          "choices": [
+            "Avec le package django-jwt",
+            "Avec le package djangorestframework-simplejwt",
+            "Avec le package django-auth",
+            "Avec le package drf-jwt"
+          ],
+          "correct_answer": "Avec le package djangorestframework-simplejwt"
+        },
+        {
+          "question": "Quelle méthode permet de personnaliser la logique de sauvegarde d'un serializer?",
+          "choices": [
+            "create()",
+            "save()",
+            "update()",
+            "validate()"
+          ],
+          "correct_answer": "create()"
+        },
+        {
+          "question": "Comment limite-t-on les accès à une API?",
+          "choices": [
+            "Avec les permissions",
+            "Avec les templates",
+            "Avec les middlewares",
+            "Avec les settings"
+          ],
+          "correct_answer": "Avec les permissions"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Quiz: WordPress et CMS modernes",
+      "minimum_score": 7,
+      "success_message": "Félicitations! Vous maîtrisez les concepts avancés de WordPress!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur WordPress.",
+      "questions": [
+        {
+          "question": "Qu'est-ce qu'un Custom Post Type dans WordPress?",
+          "choices": [
+            "Un type de publication prédéfini",
+            "Un type de contenu personnalisé",
+            "Un format de post",
+            "Un modèle de page"
+          ],
+          "correct_answer": "Un type de contenu personnalisé"
+        },
+        {
+          "question": "Comment enregistre-t-on un Custom Post Type?",
+          "choices": [
+            "register_post_type()",
+            "add_post_type()",
+            "create_post_type()",
+            "new_post_type()"
+          ],
+          "correct_answer": "register_post_type()"
+        },
+        {
+          "question": "Qu'est-ce que ACF (Advanced Custom Fields)?",
+          "choices": [
+            "Un thème WordPress",
+            "Un plugin pour créer des champs personnalisés",
+            "Un type de post",
+            "Un framework CSS"
+          ],
+          "correct_answer": "Un plugin pour créer des champs personnalisés"
+        },
+        {
+          "question": "Comment créer un shortcode dans WordPress?",
+          "choices": [
+            "add_shortcode()",
+            "create_shortcode()",
+            "register_shortcode()",
+            "make_shortcode()"
+          ],
+          "correct_answer": "add_shortcode()"
+        },
+        {
+          "question": "Qu'est-ce que le Hook 'init' dans WordPress?",
+          "choices": [
+            "Un hook pour l'initialisation",
+            "Un hook pour l'affichage",
+            "Un hook pour la sauvegarde",
+            "Un hook pour la suppression"
+          ],
+          "correct_answer": "Un hook pour l'initialisation"
+        },
+        {
+          "question": "Comment sécuriser un formulaire contre les attaques CSRF?",
+          "choices": [
+            "Avec un nonce WordPress",
+            "Avec un captcha",
+            "Avec une validation JavaScript",
+            "Avec un honeypot"
+          ],
+          "correct_answer": "Avec un nonce WordPress"
+        },
+        {
+          "question": "Qu'est-ce que WP_Query?",
+          "choices": [
+            "Une classe pour interroger la base de données",
+            "Une fonction de template",
+            "Un shortcode",
+            "Un hook"
+          ],
+          "correct_answer": "Une classe pour interroger la base de données"
+        },
+        {
+          "question": "Comment créer un thème enfant dans WordPress?",
+          "choices": [
+            "En copiant le thème parent",
+            "En créant un dossier avec style.css qui référence le thème parent",
+            "En modifiant directement le thème parent",
+            "En utilisant un plugin"
+          ],
+          "correct_answer": "En créant un dossier avec style.css qui référence le thème parent"
+        },
+        {
+          "question": "Quelle est la différence entre une action et un filter hook?",
+          "choices": [
+            "Les actions exécutent du code, les filters modifient des données",
+            "Les filters exécutent du code, les actions modifient des données",
+            "Ils sont identiques",
+            "Les actions sont pour le frontend, les filters pour le backend"
+          ],
+          "correct_answer": "Les actions exécutent du code, les filters modifient des données"
+        },
+        {
+          "question": "Comment optimiser les performances d'un site WordPress?",
+          "choices": [
+            "Avec un plugin de cache",
+            "En désactivant tous les plugins",
+            "En utilisant un thème léger",
+            "Toutes ces réponses"
+          ],
+          "correct_answer": "Toutes ces réponses"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Quiz: TypeScript complet",
+      "minimum_score": 4,
+      "success_message": "Félicitations! Vous maîtrisez les concepts de TypeScript!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur TypeScript.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que TypeScript?",
+          "choices": [
+            "Un nouveau langage de programmation",
+            "Un sur-ensemble typé de JavaScript",
+            "Un framework JavaScript",
+            "Un compilateur CSS"
+          ],
+          "correct_answer": "Un sur-ensemble typé de JavaScript"
+        },
+        {
+          "question": "Comment déclare-t-on une variable avec un type number?",
+          "choices": [
+            "let x: number = 5;",
+            "let x = number(5);",
+            "let x = 5: number;",
+            "number x = 5;"
+          ],
+          "correct_answer": "let x: number = 5;"
+        },
+        {
+          "question": "Qu'est-ce qu'une interface en TypeScript?",
+          "choices": [
+            "Un contrat de structure",
+            "Une classe abstraite",
+            "Un type primitif",
+            "Un module"
+          ],
+          "correct_answer": "Un contrat de structure"
+        },
+        {
+          "question": "Comment crée-t-on un type personnalisé avec plusieurs possibilités?",
+          "choices": [
+            "Avec les union types",
+            "Avec les intersection types",
+            "Avec les generic types",
+            "Avec les any types"
+          ],
+          "correct_answer": "Avec les union types"
+        },
+        {
+          "question": "Quel est l'avantage principal des generics?",
+          "choices": [
+            "Créer du code réutilisable",
+            "Améliorer les performances",
+            "Simplifier la syntaxe",
+            "Rendre le code plus lisible"
+          ],
+          "correct_answer": "Créer du code réutilisable"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Quiz: Python pour débutants",
+      "minimum_score": 4,
+      "success_message": "Félicitations! Vous maîtrisez les bases de Python!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur Python.",
+      "questions": [
+        {
+          "question": "Comment déclare-t-on une fonction en Python?",
+          "choices": [
+            "function ma_fonction():",
+            "def ma_fonction():",
+            "func ma_fonction():",
+            "fn ma_fonction():"
+          ],
+          "correct_answer": "def ma_fonction():"
+        },
+        {
+          "question": "Quelle est la sortie de 'Hello' + 'World'?",
+          "choices": [
+            "HelloWorld",
+            "Hello World",
+            "Hello+World",
+            "Error"
+          ],
+          "correct_answer": "HelloWorld"
+        },
+        {
+          "question": "Comment crée-t-on une liste en Python?",
+          "choices": [
+            "list = (1, 2, 3)",
+            "list = [1, 2, 3]",
+            "list = {1, 2, 3}",
+            "list = <1, 2, 3>"
+          ],
+          "correct_answer": "list = [1, 2, 3]"
+        },
+        {
+          "question": "Comment itère-t-on sur une liste?",
+          "choices": [
+            "for i in list:",
+            "for (i=0; i<list.length; i++)",
+            "foreach i in list:",
+            "while list:"
+          ],
+          "correct_answer": "for i in list:"
+        },
+        {
+          "question": "Comment ouvre-t-on un fichier en lecture?",
+          "choices": [
+            "open('file.txt', 'r')",
+            "open('file.txt', 'read')",
+            "open('file.txt', 'w')",
+            "open('file.txt')"
+          ],
+          "correct_answer": "open('file.txt', 'r')"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Quiz: Java Orienté Objet",
+      "minimum_score": 6,
+      "success_message": "Félicitations! Vous maîtrisez les concepts de la POO en Java!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur Java.",
+      "questions": [
+        {
+          "question": "Qu'est-ce qu'une classe en Java?",
+          "choices": [
+            "Un blueprint pour créer des objets",
+            "Une instance d'objet",
+            "Une méthode",
+            "Une variable"
+          ],
+          "correct_answer": "Un blueprint pour créer des objets"
+        },
+        {
+          "question": "Quel mot-clé permet l'héritage en Java?",
+          "choices": [
+            "implements",
+            "extends",
+            "inherits",
+            "super"
+          ],
+          "correct_answer": "extends"
+        },
+        {
+          "question": "Qu'est-ce que l'encapsulation?",
+          "choices": [
+            "Cacher les détails d'implémentation",
+            "Réutiliser du code",
+            "Créer plusieurs formes",
+            "Initialiser des objets"
+          ],
+          "correct_answer": "Cacher les détails d'implémentation"
+        },
+        {
+          "question": "Comment crée-t-on une instance d'une classe?",
+          "choices": [
+            "ClassName instance = new ClassName();",
+            "ClassName instance = ClassName();",
+            "instance = new ClassName();",
+            "new instance of ClassName();"
+          ],
+          "correct_answer": "ClassName instance = new ClassName();"
+        },
+        {
+          "question": "Qu'est-ce qu'une interface en Java?",
+          "choices": [
+            "Un contrat que les classes doivent implémenter",
+            "Une classe abstraite",
+            "Une méthode statique",
+            "Une variable finale"
+          ],
+          "correct_answer": "Un contrat que les classes doivent implémenter"
+        },
+        {
+          "question": "Quel mot-clé permet d'accéder à la classe parente?",
+          "choices": [
+            "this",
+            "super",
+            "parent",
+            "base"
+          ],
+          "correct_answer": "super"
+        },
+        {
+          "question": "Qu'est-ce que le polymorphisme?",
+          "choices": [
+            "Avoir plusieurs formes",
+            "Cacher des informations",
+            "Hériter de propriétés",
+            "Encapsuler des données"
+          ],
+          "correct_answer": "Avoir plusieurs formes"
+        },
+        {
+          "question": "Comment déclare-t-on une méthode abstraite?",
+          "choices": [
+            "abstract void method();",
+            "void abstract method();",
+            "void method() abstract;",
+            "abstract method();"
+          ],
+          "correct_answer": "abstract void method();"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Quiz: C et mémoire",
+      "minimum_score": 7,
+      "success_message": "Félicitations! Vous maîtrisez la gestion mémoire en C!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur le langage C.",
+      "questions": [
+        {
+          "question": "Qu'est-ce qu'un pointeur en C?",
+          "choices": [
+            "Une variable qui stocke une adresse mémoire",
+            "Une variable qui stocke une valeur",
+            "Un type de donnée primitif",
+            "Une fonction"
+          ],
+          "correct_answer": "Une variable qui stocke une adresse mémoire"
+        },
+        {
+          "question": "Comment alloue-t-on dynamiquement de la mémoire?",
+          "choices": [
+            "malloc()",
+            "alloc()",
+            "new",
+            "create()"
+          ],
+          "correct_answer": "malloc()"
+        },
+        {
+          "question": "Comment libère-t-on la mémoire allouée?",
+          "choices": [
+            "free()",
+            "release()",
+            "delete",
+            "remove()"
+          ],
+          "correct_answer": "free()"
+        },
+        {
+          "question": "Qu'est-ce qu'une fuite mémoire?",
+          "choices": [
+            "Quand on oublie de libérer la mémoire allouée",
+            "Quand on utilise trop de mémoire",
+            "Quand on alloue trop de mémoire",
+            "Quand on utilise des pointeurs"
+          ],
+          "correct_answer": "Quand on oublie de libérer la mémoire allouée"
+        },
+        {
+          "question": "Quelle est la différence entre pile et tas?",
+          "choices": [
+            "La pile est pour l'allocation statique, le tas pour le dynamique",
+            "Le tas est pour l'allocation statique, la pile pour le dynamique",
+            "Ils sont identiques",
+            "La pile est plus rapide que le tas"
+          ],
+          "correct_answer": "La pile est pour l'allocation statique, le tas pour le dynamique"
+        },
+        {
+          "question": "Comment accède-t-on à la valeur pointée par un pointeur?",
+          "choices": [
+            "Avec l'opérateur *",
+            "Avec l'opérateur &",
+            "Avec l'opérateur ->",
+            "Avec l'opérateur ."
+          ],
+          "correct_answer": "Avec l'opérateur *"
+        },
+        {
+          "question": "Qu'est-ce que l'arithmétique des pointeurs?",
+          "choices": [
+            "Opérations mathématiques sur les adresses mémoire",
+            "Opérations sur les valeurs pointées",
+            "Conversion de types",
+            "Gestion des erreurs"
+          ],
+          "correct_answer": "Opérations mathématiques sur les adresses mémoire"
+        },
+        {
+          "question": "Comment évite-t-on les dangling pointers?",
+          "choices": [
+            "En mettant le pointeur à NULL après free()",
+            "En n'utilisant pas free()",
+            "En utilisant seulement malloc()",
+            "En évitant les pointeurs"
+          ],
+          "correct_answer": "En mettant le pointeur à NULL après free()"
+        },
+        {
+          "question": "Qu'est-ce qu'un segmentation fault?",
+          "choices": [
+            "Une tentative d'accès à une mémoire non allouée",
+            "Une fuite mémoire",
+            "Une erreur de compilation",
+            "Une boucle infinie"
+          ],
+          "correct_answer": "Une tentative d'accès à une mémoire non allouée"
+        },
+        {
+          "question": "Comment crée-t-on un tableau dynamique?",
+          "choices": [
+            "malloc() puis realloc() si nécessaire",
+            "En utilisant uniquement malloc()",
+            "Avec calloc() uniquement",
+            "Avec des tableaux statiques"
+          ],
+          "correct_answer": "malloc() puis realloc() si nécessaire"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Quiz: C++ Avancé",
+      "minimum_score": 4,
+      "success_message": "Félicitations! Vous maîtrisez les concepts avancés du C++!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur le C++.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que la STL?",
+          "choices": [
+            "Standard Template Library",
+            "Simple Template Library",
+            "Standard Type Library",
+            "Simple Type Library"
+          ],
+          "correct_answer": "Standard Template Library"
+        },
+        {
+          "question": "Comment déclare-t-on un template?",
+          "choices": [
+            "template<typename T>",
+            "template<T>",
+            "typename template T",
+            "T template"
+          ],
+          "correct_answer": "template<typename T>"
+        },
+        {
+          "question": "Qu'est-ce qu'un conteneur?",
+          "choices": [
+            "Une structure qui stocke des données",
+            "Une fonction",
+            "Un pointeur",
+            "Une classe abstraite"
+          ],
+          "correct_answer": "Une structure qui stocke des données"
+        },
+        {
+          "question": "Quelle est la différence entre vector et list?",
+          "choices": [
+            "Vector accès aléatoire, list accès séquentiel",
+            "List accès aléatoire, vector accès séquentiel",
+            "Ils sont identiques",
+            "Vector est plus rapide que list"
+          ],
+          "correct_answer": "Vector accès aléatoire, list accès séquentiel"
+        },
+        {
+          "question": "Qu'est-ce qu'un itérateur?",
+          "choices": [
+            "Un objet qui permet de parcourir un conteneur",
+            "Une fonction de parcours",
+            "Un type de conteneur",
+            "Un pointeur intelligent"
+          ],
+          "correct_answer": "Un objet qui permet de parcourir un conteneur"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Quiz Rust pour développeurs",
+      "minimum_score": 7,
+      "success_message": "Félicitations! Vous maîtrisez les concepts fondamentaux de Rust!",
+      "failure_message": "Dommage! Continuez à pratiquer pour améliorer votre compréhension de Rust.",
+      "questions": [
+        {
+          "question": "Quelle entreprise sponsorise principalement le développement de Rust?",
+          "choices": [
+            "Mozilla",
+            "Google",
+            "Microsoft",
+            "Facebook"
+          ],
+          "correct_answer": "Mozilla"
+        },
+        {
+          "question": "Quel est le concept central de Rust qui garantit la sécurité mémoire?",
+          "choices": [
+            "Le garbage collector",
+            "Le système d'ownership",
+            "Les pointeurs bruts",
+            "Les références cycliques"
+          ],
+          "correct_answer": "Le système d'ownership"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour déclarer une variable mutable en Rust?",
+          "choices": [
+            "mut",
+            "var",
+            "let",
+            "mutable"
+          ],
+          "correct_answer": "mut"
+        },
+        {
+          "question": "Que signifie le terme 'borrowing' en Rust?",
+          "choices": [
+            "Copier une valeur",
+            "Emprunter une référence à une valeur",
+            "Libérer de la mémoire",
+            "Déplacer une valeur"
+          ],
+          "correct_answer": "Emprunter une référence à une valeur"
+        },
+        {
+          "question": "Quel est le type de retour par défaut d'une fonction Rust quand aucun retour n'est spécifié?",
+          "choices": [
+            "void",
+            "()",
+            "null",
+            "undefined"
+          ],
+          "correct_answer": "()"
+        },
+        {
+          "question": "Quel enum est utilisé pour gérer les opérations qui peuvent échouer?",
+          "choices": [
+            "Option",
+            "Result",
+            "Error",
+            "Failure"
+          ],
+          "correct_answer": "Result"
+        },
+        {
+          "question": "Quel outil est le gestionnaire de paquets officiel de Rust?",
+          "choices": [
+            "Cargo",
+            "Rustup",
+            "Crater",
+            "Clippy"
+          ],
+          "correct_answer": "Cargo"
+        },
+        {
+          "question": "Quelle est la particularité du système de traits en Rust?",
+          "choices": [
+            "Ils permettent l'héritage",
+            "Ils sont similaires aux interfaces",
+            "Ils génèrent du code automatiquement",
+            "Ils sont optionnels"
+          ],
+          "correct_answer": "Ils sont similaires aux interfaces"
+        },
+        {
+          "question": "Comment déclare-t-on une structure en Rust?",
+          "choices": [
+            "struct NomStruct { champs }",
+            "class NomStruct { champs }",
+            "type NomStruct = { champs }",
+            "define struct NomStruct { champs }"
+          ],
+          "correct_answer": "struct NomStruct { champs }"
+        },
+        {
+          "question": "Quel mécanisme Rust utilise-t-il pour la programmation concurrente?",
+          "choices": [
+            "Goroutines",
+            "Threads légers avec ownership",
+            "Callback hell",
+            "Promises/Futures"
+          ],
+          "correct_answer": "Threads légers avec ownership"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Quiz Introduction au SQL",
+      "minimum_score": 4,
+      "success_message": "Félicitations! Vous maîtrisez les bases du SQL!",
+      "failure_message": "Dommage! N'hésitez pas à réviser les leçons sur les bases de données.",
+      "questions": [
+        {
+          "question": "Que signifie l'acronyme SQL?",
+          "choices": [
+            "Structured Question Language",
+            "Structured Query Language",
+            "Simple Query Language",
+            "Standard Question Logic"
+          ],
+          "correct_answer": "Structured Query Language"
+        },
+        {
+          "question": "Quelle commande SQL utilise-t-on pour récupérer des données?",
+          "choices": [
+            "GET",
+            "FETCH",
+            "SELECT",
+            "RETRIEVE"
+          ],
+          "correct_answer": "SELECT"
+        },
+        {
+          "question": "Quelle clause permet de filtrer les résultats d'une requête?",
+          "choices": [
+            "FILTER",
+            "WHERE",
+            "HAVING",
+            "CONDITION"
+          ],
+          "correct_answer": "WHERE"
+        },
+        {
+          "question": "Quel type de jointure retourne tous les enregistrements quand il y a une correspondance dans l'une ou l'autre table?",
+          "choices": [
+            "INNER JOIN",
+            "LEFT JOIN",
+            "FULL OUTER JOIN",
+            "CROSS JOIN"
+          ],
+          "correct_answer": "FULL OUTER JOIN"
+        },
+        {
+          "question": "Quelle fonction d'agrégation compte le nombre d'enregistrements?",
+          "choices": [
+            "TOTAL",
+            "SUM",
+            "COUNT",
+            "AGGREGATE"
+          ],
+          "correct_answer": "COUNT"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "title": "Quiz Data Science avec Python",
+      "minimum_score": 6,
+      "success_message": "Félicitations! Vous maîtrisez les bases du Data Science avec Python!",
+      "failure_message": "Dommage! Continuez à pratiquer pour améliorer vos compétences en Data Science.",
+      "questions": [
+        {
+          "question": "Quelle bibliothèque Python est principalement utilisée pour la manipulation de données?",
+          "choices": [
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "SciPy"
+          ],
+          "correct_answer": "Pandas"
+        },
+        {
+          "question": "Qu'est-ce qu'un DataFrame?",
+          "choices": [
+            "Un type de graphique",
+            "Une structure de données tabulaire",
+            "Un algorithme d'apprentissage automatique",
+            "Une méthode de visualisation"
+          ],
+          "correct_answer": "Une structure de données tabulaire"
+        },
+        {
+          "question": "Quelle bibliothèque est spécialisée dans le calcul numérique avec des tableaux multidimensionnels?",
+          "choices": [
+            "Pandas",
+            "NumPy",
+            "SciKit-Learn",
+            "TensorFlow"
+          ],
+          "correct_answer": "NumPy"
+        },
+        {
+          "question": "Quel type de graphique est idéal pour visualiser la distribution d'une variable?",
+          "choices": [
+            "Graphique en courbes",
+            "Histogramme",
+            "Diagramme circulaire",
+            "Carte thermique"
+          ],
+          "correct_answer": "Histogramme"
+        },
+        {
+          "question": "Quelle méthode utilise-t-on pour gérer les valeurs manquantes dans un DataFrame?",
+          "choices": [
+            "dropna()",
+            "remove_missing()",
+            "delete_na()",
+            "fill_empty()"
+          ],
+          "correct_answer": "dropna()"
+        },
+        {
+          "question": "Qu'est-ce que la normalisation des données?",
+          "choices": [
+            "Supprimer les doublons",
+            "Transformer les données pour les mettre à une échelle commune",
+            "Convertir les données en texte",
+            "Trier les données par ordre alphabétique"
+          ],
+          "correct_answer": "Transformer les données pour les mettre à une échelle commune"
+        },
+        {
+          "question": "Quelle bibliothèque est principalement utilisée pour la visualisation de données?",
+          "choices": [
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "SciKit-Learn"
+          ],
+          "correct_answer": "Matplotlib"
+        },
+        {
+          "question": "Qu'est-ce qu'une série temporelle?",
+          "choices": [
+            "Une collection de données indexées par le temps",
+            "Un algorithme de prédiction",
+            "Un type de graphique",
+            "Une méthode de clustering"
+          ],
+          "correct_answer": "Une collection de données indexées par le temps"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Quiz Pandas et Numpy",
+      "minimum_score": 5,
+      "success_message": "Félicitations! Vous maîtrisez Pandas et NumPy!",
+      "failure_message": "Dommage! Continuez à pratiquer pour améliorer votre manipulation des données.",
+      "questions": [
+        {
+          "question": "Quelle est la différence principale entre un array NumPy et une liste Python?",
+          "choices": [
+            "Les arrays NumPy sont plus lents",
+            "Les arrays NumPy sont homogènes et optimisés pour le calcul numérique",
+            "Les lists Python ne peuvent contenir que des nombres",
+            "Il n'y a pas de différence"
+          ],
+          "correct_answer": "Les arrays NumPy sont homogènes et optimisés pour le calcul numérique"
+        },
+        {
+          "question": "Quelle méthode Pandas utilise-t-on pour lire un fichier CSV?",
+          "choices": [
+            "read_csv()",
+            "open_csv()",
+            "load_csv()",
+            "import_csv()"
+          ],
+          "correct_answer": "read_csv()"
+        },
+        {
+          "question": "Qu'est-ce que le broadcasting en NumPy?",
+          "choices": [
+            "Une méthode de diffusion de données sur le réseau",
+            "Un mécanisme permettant des opérations entre arrays de différentes formes",
+            "Un type de graphique",
+            "Une fonction de conversion de type"
+          ],
+          "correct_answer": "Un mécanisme permettant des opérations entre arrays de différentes formes"
+        },
+        {
+          "question": "Comment sélectionne-t-on une colonne spécifique dans un DataFrame?",
+          "choices": [
+            "df.column('nom_colonne')",
+            "df['nom_colonne']",
+            "df.select('nom_colonne')",
+            "df.get('nom_colonne')"
+          ],
+          "correct_answer": "df['nom_colonne']"
+        },
+        {
+          "question": "Quelle est l'utilité de la méthode groupby()?",
+          "choices": [
+            "Diviser le DataFrame en groupes selon certaines conditions",
+            "Supprimer des colonnes",
+            "Trier le DataFrame",
+            "Fusionner deux DataFrames"
+          ],
+          "correct_answer": "Diviser le DataFrame en groupes selon certaines conditions"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Quiz Power BI complet",
+      "minimum_score": 6,
+      "success_message": "Félicitations! Vous maîtrisez Power BI!",
+      "failure_message": "Dommage! Continuez à pratiquer pour améliorer vos compétences en visualisation de données.",
+      "questions": [
+        {
+          "question": "Qu'est-ce que Power BI?",
+          "choices": [
+            "Un langage de programmation",
+            "Une suite d'outils d'analyse business et de visualisation",
+            "Un système d'exploitation",
+            "Un logiciel de traitement de texte"
+          ],
+          "correct_answer": "Une suite d'outils d'analyse business et de visualisation"
+        },
+        {
+          "question": "Quel est le rôle principal de Power Query?",
+          "choices": [
+            "Créer des visualisations",
+            "Nettoyer et transformer les données",
+            "Déployer des rapports",
+            "Programmer des calculs"
+          ],
+          "correct_answer": "Nettoyer et transformer les données"
+        },
+        {
+          "question": "Que signifie DAX?",
+          "choices": [
+            "Data Analysis Expressions",
+            "Digital Automation Extension",
+            "Data Acquisition XML",
+            "Dynamic Analysis Xperience"
+          ],
+          "correct_answer": "Data Analysis Expressions"
+        },
+        {
+          "question": "Qu'est-ce qu'une mesure dans Power BI?",
+          "choices": [
+            "Un type de visualisation",
+            "Un calcul effectué à la volée basé sur les filtres actuels",
+            "Une colonne de données importée",
+            "Un paramètre de formatage"
+          ],
+          "correct_answer": "Un calcul effectué à la volée basé sur les filtres actuels"
+        },
+        {
+          "question": "Quel type de relation entre les tables est le plus courant?",
+          "choices": [
+            "Relation plusieurs-à-plusieurs",
+            "Relation un-à-plusieurs",
+            "Relation un-à-un",
+            "Relation circulaire"
+          ],
+          "correct_answer": "Relation un-à-plusieurs"
+        },
+        {
+          "question": "Qu'est-ce qu'un tableau de bord dans Power BI?",
+          "choices": [
+            "Une collection de visualisations sur une seule page",
+            "Un outil de transformation de données",
+            "Un langage de requête",
+            "Un type de base de données"
+          ],
+          "correct_answer": "Une collection de visualisations sur une seule page"
+        }
+      ]
+    }
+  ]
+}

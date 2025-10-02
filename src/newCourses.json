@@ -1,0 +1,2961 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introduction à  HTML",
+      "category": "Développement Web",
+      "level": "Débutant",
+      "description": "Cours sur Introduction à  HTML dans la catégorie Développement Web.",
+      "instructor": "Marie Dubois",
+      "duration": "2h 30min",
+      "price": 0,
+      "originalPrice": 49,
+      "thumbnail": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 1250,
+      "tags": ["html", "web", "frontend", "débutant", "bases"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-15",
+      "updatedDate": "2024-08-20",
+      "estimatedTime": "1 semaine",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction au HTML",
+          "duration": "25min",
+          "videoUrl": "https://www.youtube.com/embed/UB1O30fR-EE",
+          "description": "Découverte du langage HTML et de son rôle dans le développement web",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Structure d'un document HTML",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/UB1O30fR-EE",
+          "description": "Comprendre la structure de base d'une page HTML",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Les balises de contenu",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/UB1O30fR-EE",
+          "description": "Apprendre les principales balises pour structurer le contenu",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Les liens et les images",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/UB1O30fR-EE",
+          "description": "Intégrer des liens et des images dans vos pages",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Projet pratique : Ma première page",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/UB1O30fR-EE",
+          "description": "Créer votre première page web complète",
+          "completed": false
+        }
+      ],
+      "comments": [
+        {
+          "id": 101,
+          "authorId": 1,
+          "author": "Alice",
+          "avatar": "https://i.pravatar.cc/150?u=alice",
+          "date": "2024-09-01",
+          "text": "Super cours, très clair pour les débutants !"
+        },
+        {
+          "id": 102,
+          "authorId": 2,
+          "author": "Bob",
+          "avatar": "https://i.pravatar.cc/150?u=bob",
+          "date": "2024-09-02",
+          "text": "J'ai beaucoup appris, merci Marie."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Go Lang : bases et pratiques",
+      "category": "Programmation",
+      "level": "Avancé",
+      "description": "Cours sur Go Lang : bases et pratiques dans la catégorie Programmation.",
+      "instructor": "Kevin Zhang",
+      "duration": "7h 20min",
+      "price": 169,
+      "originalPrice": 239,
+      "thumbnail": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 389,
+      "tags": ["golang", "go", "concurrence", "backend", "performance"],
+      "prerequisites": ["Expérience en programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-08",
+      "updatedDate": "2024-09-20",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Go",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Découvrir le langage Go et ses spécificités",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Syntaxe et types",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Maîtriser la syntaxe de base de Go",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Fonctions et packages",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Organiser le code avec les packages",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Structs et méthodes",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Programmation orientée objet en Go",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Interfaces",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Utiliser les interfaces pour la flexibilité",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Goroutines et channels",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Programmation concurrente avec Go",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Gestion d'erreurs",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Gérer les erreurs de façon idiomatique",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Tests en Go",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Écrire et exécuter des tests",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Web avec Go",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Créer des applications web",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Projet : API REST",
+          "duration": "95min",
+          "videoUrl": "https://www.youtube.com/embed/YS4e4q9oBaU",
+          "description": "Développer une API complète en Go",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Kotlin pour Android",
+      "category": "Programmation",
+      "level": "Débutant",
+      "description": "Cours sur Kotlin pour Android dans la catégorie Programmation.",
+      "instructor": "Amel Benali",
+      "duration": "6h 30min",
+      "price": 0,
+      "originalPrice": 149,
+      "thumbnail": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
+      "rating": 4.5,
+      "enrolledStudents": 967,
+      "tags": ["kotlin", "android", "mobile", "app", "développement"],
+      "prerequisites": ["Bases de programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-22",
+      "updatedDate": "2024-08-18",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Kotlin vs Java",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Pourquoi choisir Kotlin pour Android",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Syntaxe Kotlin",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Apprendre la syntaxe moderne de Kotlin",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Android Studio et setup",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Configurer l'environnement de développement",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Activités et vues",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Créer des interfaces utilisateur",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Layouts et resources",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Organiser l'interface et les ressources",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Navigation entre écrans",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Gérer la navigation dans l'app",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "RecyclerView et listes",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Afficher des listes efficacement",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Stockage local",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Sauvegarder des données localement",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Networking et API",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Communiquer avec des services web",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Testing Android",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Tester les applications Android",
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Projet : App de notes",
+          "duration": "85min",
+          "videoUrl": "https://www.youtube.com/embed/F9UC9DY-vIU",
+          "description": "Développer une application complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Machine Learning Scikit-Learn",
+      "category": "Data & IA",
+      "level": "Intermédiaire",
+      "description": "Cours sur Machine Learning Scikit-Learn dans la catégorie Data & IA.",
+      "instructor": "Dr. Ahmed Kadri",
+      "duration": "10h 15min",
+      "price": 299,
+      "originalPrice": 399,
+      "thumbnail": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 634,
+      "tags": ["machine-learning", "scikit-learn", "ia", "algorithmes", "python"],
+      "prerequisites": ["Python", "Statistiques", "Pandas/NumPy"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-18",
+      "updatedDate": "2024-09-11",
+      "estimatedTime": "8 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction au Machine Learning",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Concepts fondamentaux du ML",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Scikit-Learn et preprocessing",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Préparer les données pour le ML",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Régression linéaire",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Premier algorithme de régression",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Classification supervisée",
+          "duration": "75min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Algorithmes de classification",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Validation et métriques",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Évaluer les performances des modèles",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Clustering",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Apprentissage non supervisé",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Feature engineering",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Créer de meilleures features",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Hyperparameter tuning",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Optimiser les hyperparamètres",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Projet : Prédiction de prix",
+          "duration": "135min",
+          "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+          "description": "Modèle complet de prédiction",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Adobe XD pour designers",
+      "category": "Design",
+      "level": "Intermédiaire",
+      "description": "Cours sur Adobe XD pour designers dans la catégorie Design.",
+      "instructor": "Clara Fontaine",
+      "duration": "5h 45min",
+      "price": 139,
+      "originalPrice": 199,
+      "thumbnail": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop",
+      "rating": 4.4,
+      "enrolledStudents": 567,
+      "tags": ["adobe-xd", "prototype", "ux", "ui", "design"],
+      "prerequisites": ["Bases du design UX/UI"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-18",
+      "updatedDate": "2024-08-14",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Interface Adobe XD",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Découvrir l'environnement XD",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Outils de design",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Maîtriser les outils de création",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Composants et répétition",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Créer des éléments réutilisables",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Prototypage interactif",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Créer des prototypes animés",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Design responsive",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Adapter les designs à tous les écrans",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Partage et collaboration",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Travailler en équipe avec XD",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Plugins et intégrations",
+          "duration": "25min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Étendre les fonctionnalités de XD",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Handoff développeurs",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Transmettre les designs aux développeurs",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Projet : App mobile complète",
+          "duration": "95min",
+          "videoUrl": "https://www.youtube.com/embed/68w2VwalD5w",
+          "description": "Designer une application mobile de A à Z",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "title": "Email marketing efficace",
+      "category": "Marketing Digital",
+      "level": "Débutant",
+      "description": "Cours sur Email marketing efficace dans la catégorie Marketing Digital.",
+      "instructor": "Maxime Roussel",
+      "duration": "4h 25min",
+      "price": 0,
+      "originalPrice": 89,
+      "thumbnail": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 1456,
+      "tags": ["email", "marketing", "newsletter", "automation", "conversion"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-28",
+      "updatedDate": "2024-08-31",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Stratégie email marketing",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Définir une stratégie email efficace",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Construire sa liste",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Techniques pour collecter des emails",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Design d'emails",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Créer des emails attractifs",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Copywriting pour emails",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Rédiger des emails qui convertissent",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Automatisation email",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Séquences automatisées et drip campaigns",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "A/B testing",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Optimiser avec les tests A/B",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Analytics et délivrabilité",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Mesurer et améliorer les performances",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Projet : Campagne complète",
+          "duration": "85min",
+          "videoUrl": "https://www.youtube.com/embed/YQiRG5BdsME",
+          "description": "Créer une campagne email de A à Z",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "title": "Gestion de projet Agile",
+      "category": "Entrepreneuriat & Soft Skills",
+      "level": "Avancé",
+      "description": "Cours sur Gestion de projet Agile dans la catégorie Entrepreneuriat & Soft Skills.",
+      "instructor": "Stéphane Mercier",
+      "duration": "6h 55min",
+      "price": 189,
+      "originalPrice": 269,
+      "thumbnail": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 598,
+      "tags": ["agile", "scrum", "kanban", "projet", "méthodologie"],
+      "prerequisites": ["Expérience en gestion de projet"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-22",
+      "updatedDate": "2024-09-17",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Manifeste Agile",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Comprendre les valeurs et principes Agile",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Framework Scrum",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Maîtriser la méthodologie Scrum",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Rôles et responsabilités",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Product Owner, Scrum Master, équipe",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Sprint planning et estimation",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Planifier et estimer en mode Agile",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Kanban et flux continu",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Méthode Kanban pour l'amélioration continue",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Métriques Agile",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Velocity, burndown, indicateurs de performance",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : Transformation Agile",
+          "duration": "95min",
+          "videoUrl": "https://www.youtube.com/embed/Z9QbYZh1YXY",
+          "description": "Cas pratique de transformation d'équipe",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "CSS Avancé : Flexbox et Grid",
+      "category": "Développement Web",
+      "level": "Intermédiaire",
+      "description": "Cours sur CSS Avancé : Flexbox et Grid dans la catégorie Développement Web.",
+      "instructor": "Pierre Martin",
+      "duration": "4h 15min",
+      "price": 79,
+      "originalPrice": 129,
+      "thumbnail": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 892,
+      "tags": ["css", "flexbox", "grid", "layout", "responsive"],
+      "prerequisites": ["Connaissances de base en HTML et CSS"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-10",
+      "updatedDate": "2024-09-05",
+      "estimatedTime": "2 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Flexbox",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Découverte des concepts fondamentaux de Flexbox",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Propriétés du conteneur flex",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Apprendre les propriétés principales du conteneur",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Propriétés des éléments flex",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Contrôler le comportement des éléments flexibles",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Introduction à CSS Grid",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Découverte du système de grille CSS",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Layouts complexes avec Grid",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Créer des mises en page avancées",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet final : Site responsive",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/JJSoEo8JSnc",
+          "description": "Réaliser un site complet responsive",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "JavaScript ES6+",
+      "category": "Développement Web",
+      "level": "Avancé",
+      "description": "Cours sur JavaScript ES6+ dans la catégorie Développement Web.",
+      "instructor": "Sophie Laurent",
+      "duration": "6h 45min",
+      "price": 149,
+      "originalPrice": 199,
+      "thumbnail": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 567,
+      "tags": ["javascript", "es6", "moderne", "async", "modules"],
+      "prerequisites": ["Bases solides en JavaScript"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-05",
+      "updatedDate": "2024-09-10",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Let, const et scope",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Comprendre les nouvelles déclarations de variables",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Arrow functions",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Syntaxe moderne pour les fonctions",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Destructuring et spread",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Techniques de décomposition et d'expansion",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Template literals",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Nouvelle syntaxe pour les chaînes de caractères",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Modules ES6",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Import/export et organisation du code",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Promises et async/await",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Gestion moderne de l'asynchrone",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : Application moderne",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/sjyJBL5fkp8",
+          "description": "Développer une app avec toutes les features ES6+",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Vue.js pour débutants",
+      "category": "Développement Web",
+      "level": "Débutant",
+      "description": "Cours sur Vue.js pour débutants dans la catégorie Développement Web.",
+      "instructor": "Lucas Moreau",
+      "duration": "5h 20min",
+      "price": 0,
+      "originalPrice": 89,
+      "thumbnail": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 1180,
+      "tags": ["vuejs", "framework", "javascript", "spa", "frontend"],
+      "prerequisites": ["Bases en JavaScript"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-25",
+      "updatedDate": "2024-08-28",
+      "estimatedTime": "2-3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Vue.js",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Découverte du framework Vue.js et de ses avantages",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Installation et premier projet",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Configurer l'environnement et créer sa première app Vue",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Template et directives",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Comprendre le système de template de Vue",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Composants et props",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Créer et utiliser des composants réutilisables",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "État et événements",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Gérer l'état local et les interactions utilisateur",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Routing avec Vue Router",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Navigation entre les pages de l'application",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "État global avec Vuex",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Gérer l'état partagé dans l'application",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Projet final : Todo App",
+          "duration": "75min",
+          "videoUrl": "https://www.youtube.com/embed/nhBVL41-_Cw",
+          "description": "Développer une application complète avec Vue.js",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "React de A à  Z",
+      "category": "Développement Web",
+      "level": "Intermédiaire",
+      "description": "Cours sur React de A à  Z dans la catégorie Développement Web.",
+      "instructor": "Antoine Durand",
+      "duration": "7h 30min",
+      "price": 179,
+      "originalPrice": 249,
+      "thumbnail": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 743,
+      "tags": ["react", "hooks", "jsx", "frontend", "spa"],
+      "prerequisites": ["JavaScript ES6+", "Bases en développement web"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-20",
+      "updatedDate": "2024-09-15",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à React",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Comprendre React et son écosystème",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "JSX et composants",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Syntaxe JSX et création de composants",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Props et state",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Gérer les données dans les composants",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Événements et formulaires",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Interactions utilisateur et gestion des formulaires",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Hooks : useState et useEffect",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Introduction aux hooks React modernes",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Hooks avancés",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "useContext, useReducer, useMemo et autres hooks",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "React Router",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Navigation et routing dans React",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Gestion d'état avec Context",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Partager l'état entre composants",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Projet : E-commerce App",
+          "duration": "90min",
+          "videoUrl": "https://www.youtube.com/embed/Tn6-PIqc4UM",
+          "description": "Développer une application e-commerce complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Laravel avancé",
+      "category": "Développement Web",
+      "level": "Avancé",
+      "description": "Cours sur Laravel avancé dans la catégorie Développement Web.",
+      "instructor": "Jean-Baptiste Roussel",
+      "duration": "8h 15min",
+      "price": 199,
+      "originalPrice": 299,
+      "thumbnail": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 412,
+      "tags": ["laravel", "php", "mvc", "backend", "api"],
+      "prerequisites": ["PHP orienté objet", "Bases de données"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-15",
+      "updatedDate": "2024-09-20",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Architecture MVC Laravel",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Comprendre l'architecture Model-View-Controller",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Eloquent ORM avancé",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Maîtriser l'ORM Eloquent et les relations",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Middlewares et authentification",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Sécuriser l'application avec les middlewares",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "APIs REST avec Laravel",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Créer des APIs robustes et sécurisées",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Testing et TDD",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Tests unitaires et développement dirigé par les tests",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Queues et jobs",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Gestion des tâches asynchrones",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Cache et performances",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Optimiser les performances de l'application",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Broadcasting et WebSockets",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Communication temps réel",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Notifications avancées",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Système de notifications multi-canaux",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Projet : API e-commerce",
+          "duration": "115min",
+          "videoUrl": "https://www.youtube.com/embed/MFh0Fd7BsjE",
+          "description": "Développer une API e-commerce complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Node.js et Express",
+      "category": "Développement Web",
+      "level": "Débutant",
+      "description": "Cours sur Node.js et Express dans la catégorie Développement Web.",
+      "instructor": "Camille Lefevre",
+      "duration": "4h 45min",
+      "price": 0,
+      "originalPrice": 79,
+      "thumbnail": "https://images.unsplash.com/photo-1518135714426-c18f5ffb6f4d?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 1521,
+      "tags": ["nodejs", "express", "backend", "javascript", "server"],
+      "prerequisites": ["JavaScript"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-30",
+      "updatedDate": "2024-08-25",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Node.js",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Découvrir Node.js et son écosystème",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Modules et NPM",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Gérer les modules et les dépendances",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Premier serveur avec Express",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Créer un serveur web avec Express.js",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Routes et middlewares",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Organiser les routes et utiliser les middlewares",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Templates avec EJS",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Générer des vues dynamiques",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Base de données avec MongoDB",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Intégrer une base de données NoSQL",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Authentification et sessions",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Gérer l'authentification des utilisateurs",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "API REST",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Créer une API RESTful",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Gestion des erreurs",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Implémenter une gestion d'erreurs robuste",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Déploiement",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Déployer l'application en production",
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Projet : Blog avec commentaires",
+          "duration": "75min",
+          "videoUrl": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+          "description": "Développer un blog complet avec Node.js",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "API REST avec Django",
+      "category": "Développement Web",
+      "level": "Intermédiaire",
+      "description": "Cours sur API REST avec Django dans la catégorie Développement Web.",
+      "instructor": "François Girard",
+      "duration": "6h 20min",
+      "price": 129,
+      "originalPrice": 189,
+      "thumbnail": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 623,
+      "tags": ["django", "python", "api", "rest", "backend"],
+      "prerequisites": ["Python", "Bases en développement web"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-28",
+      "updatedDate": "2024-09-12",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Django",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Découvrir le framework Django",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Models et ORM Django",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Créer et gérer les modèles de données",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Django REST Framework",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Introduction au DRF pour créer des APIs",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Serializers",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Sérialiser les données pour les APIs",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "ViewSets et permissions",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Créer des vues et gérer les permissions",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Authentication et JWT",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Sécuriser l'API avec JWT",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Filtres et pagination",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Optimiser les requêtes API",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Tests d'API",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Tester les endpoints de l'API",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Documentation avec Swagger",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Documenter automatiquement l'API",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Déploiement et production",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Mettre l'API en production",
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Optimisations avancées",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Cache, optimisations de requêtes",
+          "completed": false
+        },
+        {
+          "id": 12,
+          "title": "Projet : API de gestion de tâches",
+          "duration": "85min",
+          "videoUrl": "https://www.youtube.com/embed/rHux0gMZ3Eg",
+          "description": "Développer une API complète de todo-list",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "WordPress et CMS modernes",
+      "category": "Développement Web",
+      "level": "Avancé",
+      "description": "Cours sur WordPress et CMS modernes dans la catégorie Développement Web.",
+      "instructor": "Sylvie Moreau",
+      "duration": "5h 55min",
+      "price": 109,
+      "originalPrice": 159,
+      "thumbnail": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop",
+      "rating": 4.4,
+      "enrolledStudents": 789,
+      "tags": ["wordpress", "cms", "php", "themes", "plugins"],
+      "prerequisites": ["HTML/CSS", "Bases en PHP"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-20",
+      "updatedDate": "2024-08-18",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à WordPress",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Comprendre WordPress et son écosystème",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Installation et configuration",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Installer et configurer WordPress",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Thèmes et personnalisation",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Créer et personnaliser des thèmes",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Custom Post Types",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Créer des types de contenu personnalisés",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "ACF et champs personnalisés",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Gérer les champs personnalisés avancés",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Développement de plugins",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Créer ses propres plugins WordPress",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Hooks et actions",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Utiliser le système de hooks WordPress",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "WP REST API",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Utiliser WordPress comme backend API",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Sécurité WordPress",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Sécuriser son site WordPress",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Performances et optimisation",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Optimiser les performances",
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Gutenberg et blocks",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Développer pour l'éditeur Gutenberg",
+          "completed": false
+        },
+        {
+          "id": 12,
+          "title": "Headless WordPress",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "WordPress comme CMS headless",
+          "completed": false
+        },
+        {
+          "id": 13,
+          "title": "Projet : Site corporate complet",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/DvbQ2eLfvDI",
+          "description": "Développer un site d'entreprise avec WordPress",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "TypeScript complet",
+      "category": "Développement Web",
+      "level": "Débutant",
+      "description": "Cours sur TypeScript complet dans la catégorie Développement Web.",
+      "instructor": "Marc Dupuis",
+      "duration": "6h 10min",
+      "price": 0,
+      "originalPrice": 119,
+      "thumbnail": "https://images.unsplash.com/photo-1619410283995-43d9134e7656?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 1345,
+      "tags": ["typescript", "javascript", "typage", "moderne", "développement"],
+      "prerequisites": ["JavaScript"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-12",
+      "updatedDate": "2024-09-03",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Pourquoi TypeScript ?",
+          "duration": "25min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Introduction et avantages de TypeScript",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Configuration et compilation",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Configurer un projet TypeScript",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Types de base",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "String, number, boolean, array, tuple",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Interfaces et types",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Définir des structures de données",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Classes et héritage",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Programmation orientée objet en TypeScript",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Génériques (Generics)",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Créer du code réutilisable avec les génériques",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Modules et namespaces",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Organiser le code en modules",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Decorators",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Utiliser les décorateurs TypeScript",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Types avancés",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Union types, intersection types, conditional types",
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "TypeScript avec React",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Intégrer TypeScript dans un projet React",
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Testing avec TypeScript",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Écrire des tests typés",
+          "completed": false
+        },
+        {
+          "id": 12,
+          "title": "Migration JavaScript vers TypeScript",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Migrer un projet existant",
+          "completed": false
+        },
+        {
+          "id": 13,
+          "title": "Bonnes pratiques",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Conseils et bonnes pratiques TypeScript",
+          "completed": false
+        },
+        {
+          "id": 14,
+          "title": "Projet : API typée",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/d56mG7DezGs",
+          "description": "Développer une API entièrement typée",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Python pour débutants",
+      "category": "Programmation",
+      "level": "Débutant",
+      "description": "Cours sur Python pour débutants dans la catégorie Programmation.",
+      "instructor": "Thomas Bernard",
+      "duration": "3h 20min",
+      "price": 0,
+      "originalPrice": 69,
+      "thumbnail": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 2150,
+      "tags": ["python", "programmation", "débutant", "bases", "algorithmique"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-20",
+      "updatedDate": "2024-08-15",
+      "estimatedTime": "2 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Installation et premier programme",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "description": "Installer Python et écrire votre premier code",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Variables et types de données",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "description": "Comprendre les variables et les types en Python",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Conditions et boucles",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "description": "Structures de contrôle et logique conditionnelle",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Fonctions et modules",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "description": "Créer et utiliser des fonctions",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Projet : Calculatrice simple",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "description": "Appliquer vos connaissances dans un projet concret",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Java Orienté Objet",
+      "category": "Programmation",
+      "level": "Intermédiaire",
+      "description": "Cours sur Java Orienté Objet dans la catégorie Programmation.",
+      "instructor": "Patrick Leblanc",
+      "duration": "5h 30min",
+      "price": 139,
+      "originalPrice": 199,
+      "thumbnail": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 934,
+      "tags": ["java", "poo", "orienté-objet", "héritage", "polymorphisme"],
+      "prerequisites": ["Bases de programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-05",
+      "updatedDate": "2024-09-02",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Java",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Découvrir le langage Java et son écosystème",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Classes et objets",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Comprendre les concepts fondamentaux de la POO",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Encapsulation et modificateurs",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Protéger les données avec l'encapsulation",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Héritage et super",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Réutiliser le code avec l'héritage",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Polymorphisme et interfaces",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Flexibilité avec le polymorphisme",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet : Système de gestion",
+          "duration": "90min",
+          "videoUrl": "https://www.youtube.com/embed/grEKMHGYyns",
+          "description": "Application complète orientée objet",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "C et mémoire",
+      "category": "Programmation",
+      "level": "Avancé",
+      "description": "Cours sur C et mémoire dans la catégorie Programmation.",
+      "instructor": "Robert Durand",
+      "duration": "6h 45min",
+      "price": 179,
+      "originalPrice": 249,
+      "thumbnail": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 456,
+      "tags": ["c", "mémoire", "pointeurs", "système", "performance"],
+      "prerequisites": ["Algorithmique", "Bases de programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-01",
+      "updatedDate": "2024-08-28",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction au langage C",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Histoire et spécificités du C",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Types de données et variables",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Gestion des types en C",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Pointeurs fondamentaux",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Comprendre et utiliser les pointeurs",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Allocation dynamique",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "malloc, free et gestion mémoire",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Structures et unions",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Organiser les données complexes",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Fichiers et E/S",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Manipuler les fichiers en C",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : Gestionnaire mémoire",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+          "description": "Implémenter un allocateur mémoire",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "C++ Avancé",
+      "category": "Programmation",
+      "level": "Débutant",
+      "description": "Cours sur C++ Avancé dans la catégorie Programmation.",
+      "instructor": "Isabelle Marchand",
+      "duration": "7h 15min",
+      "price": 0,
+      "originalPrice": 159,
+      "thumbnail": "https://images.unsplash.com/photo-1562813733-b31f71025d54?w=400&h=250&fit=crop",
+      "rating": 4.5,
+      "enrolledStudents": 687,
+      "tags": ["cpp", "programmation", "orienté-objet", "templates", "stl"],
+      "prerequisites": ["C ou bases de programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-18",
+      "updatedDate": "2024-09-07",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Évolution du C vers C++",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Différences entre C et C++",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Classes et constructeurs",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "POO en C++",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Surcharge d'opérateurs",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Redéfinir les opérateurs",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Héritage et polymorphisme",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Concepts avancés de POO",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Templates et génériques",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Programmation générique",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "STL et conteneurs",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Utiliser la Standard Template Library",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Gestion des exceptions",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Gérer les erreurs en C++",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Projet : Moteur de jeu simple",
+          "duration": "90min",
+          "videoUrl": "https://www.youtube.com/embed/18c3MTX0PK0",
+          "description": "Application complète en C++",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Rust pour développeurs",
+      "category": "Programmation",
+      "level": "Intermédiaire",
+      "description": "Cours sur Rust pour développeurs dans la catégorie Programmation.",
+      "instructor": "Alexandre Chen",
+      "duration": "8h 30min",
+      "price": 199,
+      "originalPrice": 289,
+      "thumbnail": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 423,
+      "tags": ["rust", "sécurité", "performance", "système", "moderne"],
+      "prerequisites": ["Expérience en programmation"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-25",
+      "updatedDate": "2024-09-18",
+      "estimatedTime": "6 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Pourquoi Rust ?",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Avantages et philosophie de Rust",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Ownership et borrowing",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Concepts fondamentaux de Rust",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Types et pattern matching",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Système de types avancé",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Structs et enums",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Définir des types personnalisés",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Traits et génériques",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Polymorphisme en Rust",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Gestion d'erreurs",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Result, Option et propagation",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Concurrence et parallélisme",
+          "duration": "75min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Programming concurrent sûr",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Cargo et écosystème",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Outils et gestionnaire de paquets",
+          "completed": false
+        },
+        {
+          "id": 9,
+          "title": "Projet : CLI application",
+          "duration": "100min",
+          "videoUrl": "https://www.youtube.com/embed/lpOg2nl3kr0",
+          "description": "Application en ligne de commande",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Introduction au SQL",
+      "category": "Data & IA",
+      "level": "Débutant",
+      "description": "Cours sur Introduction au SQL dans la catégorie Data & IA.",
+      "instructor": "Julie Moreau",
+      "duration": "4h 10min",
+      "price": 89,
+      "originalPrice": 139,
+      "thumbnail": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 1780,
+      "tags": ["sql", "database", "requêtes", "données", "mysql"],
+      "prerequisites": ["Notions de base en informatique"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-25",
+      "updatedDate": "2024-09-01",
+      "estimatedTime": "2 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction aux bases de données",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+          "description": "Concepts fondamentaux des bases de données relationnelles",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Requêtes SELECT de base",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+          "description": "Extraire des données avec SELECT",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Filtres et conditions WHERE",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+          "description": "Filtrer les résultats avec des conditions",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Jointures et relations",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+          "description": "Lier plusieurs tables avec les JOIN",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Projet : Analyse de données",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+          "description": "Analyser un jeu de données complet",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "title": "Data Science avec Python",
+      "category": "Data & IA",
+      "level": "Intermédiaire",
+      "description": "Cours sur Data Science avec Python dans la catégorie Data & IA.",
+      "instructor": "Dr. Sarah Martinez",
+      "duration": "9h 20min",
+      "price": 249,
+      "originalPrice": 349,
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 892,
+      "tags": ["datascience", "python", "pandas", "numpy", "analyse"],
+      "prerequisites": ["Python", "Statistiques de base"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-12",
+      "updatedDate": "2024-09-14",
+      "estimatedTime": "6 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à la Data Science",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "Vue d'ensemble du domaine",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Environnement Jupyter",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "Configurer l'environnement de travail",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "NumPy pour le calcul numérique",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "Manipuler les arrays et matrices",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Pandas pour les données",
+          "duration": "90min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "DataFrames et manipulation de données",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Visualisation avec Matplotlib",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "Créer des graphiques efficaces",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet : Analyse exploratoire",
+          "duration": "125min",
+          "videoUrl": "https://www.youtube.com/embed/ua-CiDNNj30",
+          "description": "Analyser un dataset complet",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Pandas et Numpy",
+      "category": "Data & IA",
+      "level": "Avancé",
+      "description": "Cours sur Pandas et Numpy dans la catégorie Data & IA.",
+      "instructor": "Prof. Michel Dubois",
+      "duration": "6h 45min",
+      "price": 159,
+      "originalPrice": 229,
+      "thumbnail": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 567,
+      "tags": ["pandas", "numpy", "manipulation", "données", "performance"],
+      "prerequisites": ["Python", "Data Science basics"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-05",
+      "updatedDate": "2024-09-22",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "NumPy avancé",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Broadcasting, indexing avancé, performance",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Pandas optimisé",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Techniques d'optimisation pandas",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Gestion de gros datasets",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Chunking, HDF5, Parquet",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Nettoyage de données",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Techniques avancées de nettoyage",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Agrégations complexes",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "GroupBy, pivots, transformations",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Time series avancées",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Analyse de séries temporelles",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : Pipeline de données",
+          "duration": "95min",
+          "videoUrl": "https://www.youtube.com/embed/QUT1VHiLmmI",
+          "description": "Pipeline complet de traitement",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Power BI complet",
+      "category": "Data & IA",
+      "level": "Débutant",
+      "description": "Cours sur Power BI complet dans la catégorie Data & IA.",
+      "instructor": "Valérie Rousseau",
+      "duration": "5h 15min",
+      "price": 0,
+      "originalPrice": 129,
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 1423,
+      "tags": ["powerbi", "visualisation", "dashboard", "business", "microsoft"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-08",
+      "updatedDate": "2024-08-12",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction à Power BI",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Découvrir l'écosystème Power BI",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Connexion aux données",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Importer des données diverses",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Transformation des données",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Power Query et nettoyage",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Modélisation de données",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Relations et modèle de données",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Visualisations et graphiques",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Créer des visualisations efficaces",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "DAX et mesures",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Langage DAX pour les calculs",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Dashboards interactifs",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Créer des tableaux de bord",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Projet : Dashboard ventes",
+          "duration": "85min",
+          "videoUrl": "https://www.youtube.com/embed/yKTSLffVGbk",
+          "description": "Dashboard complet d'analyse des ventes",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "title": "Photoshop pour débutants",
+      "category": "Design",
+      "level": "Débutant",
+      "description": "Cours sur Photoshop pour débutants dans la catégorie Design.",
+      "instructor": "Camille Rousseau",
+      "duration": "5h 30min",
+      "price": 119,
+      "originalPrice": 179,
+      "thumbnail": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=250&fit=crop",
+      "rating": 4.5,
+      "enrolledStudents": 945,
+      "tags": ["photoshop", "design", "retouche", "graphique", "créativité"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-10",
+      "updatedDate": "2024-08-30",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Interface et workspace",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/IyR_uYsRdPs",
+          "description": "Découvrir l'interface de Photoshop",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Outils de sélection",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/IyR_uYsRdPs",
+          "description": "Maîtriser les outils de sélection",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Calques et masques",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/IyR_uYsRdPs",
+          "description": "Comprendre le système de calques",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Retouche photo basique",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/IyR_uYsRdPs",
+          "description": "Techniques de retouche essentielles",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Projet : Affiche créative",
+          "duration": "85min",
+          "videoUrl": "https://www.youtube.com/embed/IyR_uYsRdPs",
+          "description": "Créer une affiche complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "title": "Illustrator Avancé",
+      "category": "Design",
+      "level": "Intermédiaire",
+      "description": "Cours sur Illustrator Avancé dans la catégorie Design.",
+      "instructor": "Nicolas Artois",
+      "duration": "6h 40min",
+      "price": 159,
+      "originalPrice": 219,
+      "thumbnail": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 678,
+      "tags": ["illustrator", "vectoriel", "logo", "illustration", "design"],
+      "prerequisites": ["Bases d'Illustrator"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-14",
+      "updatedDate": "2024-09-08",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Techniques de dessin avancées",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Maîtriser les outils de dessin",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Pathfinder et formes complexes",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Créer des formes sophistiquées",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Typographie créative",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Manipuler le texte de façon créative",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Dégradés et effets",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Appliquer des effets visuels",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Illustration vectorielle",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Techniques d'illustration avancées",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet : Identité visuelle",
+          "duration": "100min",
+          "videoUrl": "https://www.youtube.com/embed/Ib8UBwu3yGA",
+          "description": "Créer une charte graphique complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "title": "UI/UX Fundamentals",
+      "category": "Design",
+      "level": "Avancé",
+      "description": "Cours sur UI/UX Fundamentals dans la catégorie Design.",
+      "instructor": "Emma Fontaine",
+      "duration": "8h 25min",
+      "price": 249,
+      "originalPrice": 349,
+      "thumbnail": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 534,
+      "tags": ["ux", "ui", "design", "expérience", "interface"],
+      "prerequisites": ["Bases du design", "Thinking design"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-18",
+      "updatedDate": "2024-09-25",
+      "estimatedTime": "6 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction UX/UI",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Différences et complémentarités",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Recherche utilisateur",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Méthodes de recherche UX",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Personas et user journey",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Comprendre les utilisateurs",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Architecture de l'information",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Organiser l'information",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Wireframing et prototypage",
+          "duration": "75min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Du concept au prototype",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Tests utilisateurs",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Valider les designs",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : App mobile complète",
+          "duration": "135min",
+          "videoUrl": "https://www.youtube.com/embed/Ovj4hFxko7c",
+          "description": "Concevoir une application de A à Z",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "title": "Prototypage avec Figma",
+      "category": "Design",
+      "level": "Débutant",
+      "description": "Cours sur Prototypage avec Figma dans la catégorie Design.",
+      "instructor": "Julien Krebs",
+      "duration": "4h 50min",
+      "price": 0,
+      "originalPrice": 99,
+      "thumbnail": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 1876,
+      "tags": ["figma", "prototypage", "design", "interface", "collaboration"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-01-05",
+      "updatedDate": "2024-08-22",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Interface Figma",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Découvrir l'interface et les outils",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Formes et composants",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Créer des éléments réutilisables",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Auto Layout et contraintes",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Designs responsives avec Auto Layout",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Styles et design system",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Organiser les styles de façon cohérente",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Prototypage interactif",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Créer des prototypes animés",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Collaboration et handoff",
+          "duration": "30min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Travailler en équipe avec Figma",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Plugins et automatisation",
+          "duration": "25min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Optimiser son workflow",
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Projet : Site web responsive",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "description": "Designer un site complet dans Figma",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Introduction au SEO",
+      "category": "Marketing Digital",
+      "level": "Débutant",
+      "description": "Cours sur Introduction au SEO dans la catégorie Marketing Digital.",
+      "instructor": "Alexandre Petit",
+      "duration": "3h 45min",
+      "price": 0,
+      "originalPrice": 99,
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 1650,
+      "tags": ["seo", "référencement", "google", "marketing", "visibilité"],
+      "prerequisites": ["Notions de base en web"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-01",
+      "updatedDate": "2024-09-12",
+      "estimatedTime": "2 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Comprendre le SEO",
+          "duration": "35min",
+          "videoUrl": "https://www.youtube.com/embed/xsVTqzratPs",
+          "description": "Introduction aux concepts du référencement",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Recherche de mots-clés",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/xsVTqzratPs",
+          "description": "Identifier les bons mots-clés pour votre niche",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Optimisation on-page",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/xsVTqzratPs",
+          "description": "Optimiser le contenu et la structure",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Link building et autorité",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/xsVTqzratPs",
+          "description": "Stratégies de netlinking efficaces",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Audit SEO complet",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/xsVTqzratPs",
+          "description": "Analyser et améliorer un site existant",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "title": "SEA et Google Ads",
+      "category": "Marketing Digital",
+      "level": "Intermédiaire",
+      "description": "Cours sur SEA et Google Ads dans la catégorie Marketing Digital.",
+      "instructor": "Laura Mercier",
+      "duration": "5h 20min",
+      "price": 179,
+      "originalPrice": 249,
+      "thumbnail": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
+      "rating": 4.6,
+      "enrolledStudents": 823,
+      "tags": ["sea", "google-ads", "publicité", "payant", "adwords"],
+      "prerequisites": ["Bases du marketing digital"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-03-28",
+      "updatedDate": "2024-09-16",
+      "estimatedTime": "4 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduction au SEA",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Comprendre la publicité payante",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Configuration Google Ads",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Créer et configurer un compte",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Recherche de mots-clés payants",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Stratégies de mots-clés pour le SEA",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Création d'annonces efficaces",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Rédiger des annonces qui convertissent",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Enchères et budgets",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Optimiser les enchères et gérer le budget",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet : Campagne complète",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/1PxVhXKRrYY",
+          "description": "Lancer une campagne Google Ads rentable",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "title": "Réseaux sociaux et stratégie",
+      "category": "Marketing Digital",
+      "level": "Avancé",
+      "description": "Cours sur Réseaux sociaux et stratégie dans la catégorie Marketing Digital.",
+      "instructor": "Sophie Duval",
+      "duration": "6h 30min",
+      "price": 199,
+      "originalPrice": 279,
+      "thumbnail": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
+      "rating": 4.8,
+      "enrolledStudents": 675,
+      "tags": ["réseaux-sociaux", "stratégie", "community", "content", "social-media"],
+      "prerequisites": ["Bases du marketing digital"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-12",
+      "updatedDate": "2024-09-28",
+      "estimatedTime": "5 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Stratégie réseaux sociaux",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Définir une stratégie social media efficace",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Analyse des plateformes",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Spécificités de chaque réseau social",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Création de contenu",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Produire du contenu engageant",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Community management",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Animer et gérer une communauté",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Publicité sociale payante",
+          "duration": "65min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Facebook Ads, Instagram Ads, LinkedIn Ads",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Analytics et ROI",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Mesurer et optimiser les performances",
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Projet : Stratégie multi-plateformes",
+          "duration": "95min",
+          "videoUrl": "https://www.youtube.com/embed/yTQJz5dCFTU",
+          "description": "Développer une stratégie sociale complète",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "title": "Leadership et management",
+      "category": "Entrepreneuriat & Soft Skills",
+      "level": "Débutant",
+      "description": "Cours sur Leadership et management dans la catégorie Entrepreneuriat & Soft Skills.",
+      "instructor": "Nicolas Leroy",
+      "duration": "4h 20min",
+      "price": 159,
+      "originalPrice": 229,
+      "thumbnail": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+      "rating": 4.9,
+      "enrolledStudents": 730,
+      "tags": ["leadership", "management", "équipe", "communication", "soft-skills"],
+      "prerequisites": ["Expérience professionnelle recommandée"],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-04-15",
+      "updatedDate": "2024-09-08",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Les fondamentaux du leadership",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/fEYVb6gC_eM",
+          "description": "Comprendre les bases du leadership moderne",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Communication efficace",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/fEYVb6gC_eM",
+          "description": "Techniques de communication pour managers",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Motivation et engagement",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/fEYVb6gC_eM",
+          "description": "Motiver et engager son équipe",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Gestion des conflits",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/fEYVb6gC_eM",
+          "description": "Résoudre les conflits en équipe",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Cas pratiques de management",
+          "duration": "70min",
+          "videoUrl": "https://www.youtube.com/embed/fEYVb6gC_eM",
+          "description": "Situations réelles de management",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "title": "Communication efficace",
+      "category": "Entrepreneuriat & Soft Skills",
+      "level": "Intermédiaire",
+      "description": "Cours sur Communication efficace dans la catégorie Entrepreneuriat & Soft Skills.",
+      "instructor": "Catherine Moreau",
+      "duration": "5h 10min",
+      "price": 0,
+      "originalPrice": 139,
+      "thumbnail": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+      "rating": 4.7,
+      "enrolledStudents": 1234,
+      "tags": ["communication", "prise-de-parole", "écoute", "persuasion", "soft-skills"],
+      "prerequisites": [],
+      "certificate": true,
+      "status": "published",
+      "createdDate": "2024-02-08",
+      "updatedDate": "2024-08-26",
+      "estimatedTime": "3 semaines",
+      "language": "Français",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Bases de la communication",
+          "duration": "40min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Comprendre les mécanismes de communication",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Écoute active",
+          "duration": "45min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Développer ses capacités d'écoute",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Communication non-verbale",
+          "duration": "50min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Maîtriser le langage du corps",
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Persuasion et influence",
+          "duration": "55min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Techniques de persuasion éthique",
+          "completed": false
+        },
+        {
+          "id": 5,
+          "title": "Communication difficile",
+          "duration": "60min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Gérer les situations tendues",
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Projet : Présentation convaincante",
+          "duration": "80min",
+          "videoUrl": "https://www.youtube.com/embed/4WnKzJjGg0c",
+          "description": "Préparer et livrer une présentation percutante",
+          "completed": false
+        }
+      ]
+    }
+
+
+    
+    ]
+  }

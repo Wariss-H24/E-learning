@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@theme {
+  --color-bgColor:  #FAFAFBFF;
+  /* Sidebar bg */
+  --color-sidebarColor:  #00000000;
+  /* la couleur violet */
+  --color-blueColor:  #636AE8FF;
+  /* la couleur red */
+  --color-redColor: #E8618CFF;
+  /* Black h1 */
+  --color-blackColor: #00000000;
+  /*paragraphe dcathologue  */
+  --color-para1Color: #565D6DFF;
+  /*paragraphe detail cours  */
+  --color-para2Color: #171A1FFF;
+  --color-adminBg: #F2F2FDFF;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
