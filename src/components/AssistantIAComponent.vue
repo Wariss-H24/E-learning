@@ -8,7 +8,6 @@ const messages = ref(JSON.parse(localStorage.getItem('chat-history')) || [])
 const loading = ref(false)
 const messagesEnd = ref(null)
 
-const OPENROUTERAPI = import.meta.env.VITE_OPENROUTER_API_KEY
 const systemMessage = {
   role: 'system',
   content: `Tu es l'assistant IA de HighFive Academy, une application e-learning. Tu réponds uniquement aux questions liées à cette application, aux cours, aux technologies et aux fonctionnalités de HighFive Academy. Si l'utilisateur pose une question qui n'a pas de rapport avec cette application, réponds brièvement que tu ne peux répondre qu'aux sujets liés à HighFive Academy.`
@@ -55,10 +54,9 @@ async function send() {
       })),
     ]
 
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const response = await fetch('/.netlify/functions/openrouter-proxy', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${OPENROUTERAPI}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -67,7 +65,11 @@ async function send() {
       }),
     })
 
-    if (!response.ok) throw new Error(await response.text())
+    if (!response.ok) {
+      const errorText = await response.text()
+      throw new Error(errorText)
+    }
+
     const data = await response.json()
     const reply = data.choices?.[0]?.message?.content || "Je n'ai pas compris votre question."
     messages.value.push({ role: 'ai', text: reply })
