@@ -3,8 +3,8 @@ import MainLayout from '@/layouts/MainLayout.vue'
 import AdminView from '@/views/AdminView.vue'
 import DashboardComponent from '@/components/DashboardComponent.vue'
 import MailConfirm from '@/views/mailConfirmView.vue'
-
 import AboutUsView from '@/views/AboutUsView.vue'
+import { supabase } from '@/supabase'
 
 const routes= [
   {
@@ -51,6 +51,7 @@ const routes= [
       path: '/profil',
       name: 'profil',
       component: DashboardComponent,
+      meta: { requiresAuth: true },
     },
     {
       path: '/confirm/:user',
@@ -58,9 +59,26 @@ const routes= [
       component: MailConfirm,
     },
     {
+      path: '/auth/callback',
+      name: 'auth-callback',
+      component: MailConfirm,
+    },
+    {
+      path: '/auth/callback',
+      name: 'auth-callback',
+      component: MailConfirm,
+    },
+    {
+      path: '/parametres',
+      name: 'parametres',
+      component: () => import('@/views/ParametresView.vue'),
+      meta: { requiresAuth: true },
+    },
+    {
       path:'/quiz/:id',
       name:'quiz',
-      component: () => import('@/views/QuizView.vue')
+      component: () => import('@/views/QuizView.vue'),
+      meta: { requiresAuth: true },
     },
     
     {
@@ -80,16 +98,16 @@ const routes= [
   routes,
   linkActiveClass : "lien-actif", //spécifie la classe CSS a appliquer aux liens actifs dans la barre de navigation.Lorsqu’un lien est actif, il recevra cette classe CSS.
   })
-  router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('token')
-  const user = JSON.parse(localStorage.getItem('user') || "null")
-  // console.log(rout.params);
-  
-  const isAuthenticated = token === 'true' && user !== null
-  // Si l'utilisateur est déjà connecté, inutile d'aller sur la page Auth
+  router.beforeEach(async (to, from, next) => {
+  const { data: { session } } = await supabase.auth.getSession()
+  const isAuthenticated = !!session
+  const user = session?.user
+
   if (to.name === 'auth' && isAuthenticated) {
-    next(false) // redirige par exemple vers la page d'accueil
-  }else if(to.name==='Admin' && user.username!=='moodolion'){
+    next({ name: 'Acceuil' })
+  } else if (to.meta.requiresAuth && !isAuthenticated) {
+    next({ name: 'auth' })
+  } else if (to.name === 'Admin' && user?.user_metadata?.username !== 'wariss_ia') {
     next(from)
   } else {
     next()

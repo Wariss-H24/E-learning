@@ -1,46 +1,46 @@
 <script setup>
-import { ref } from 'vue';
-import CoursesComponent from '@/components/CoursesComponents/CoursesComponent.vue';
-import ProductDetailView from '@/views/ProductDetailView.vue';
+import { ref } from 'vue'
+import CoursesComponent from '@/components/CoursesComponents/CoursesComponent.vue'
+import ProductDetailView from '@/views/ProductDetailView.vue'
 
-const isModalOpen = ref(false);
-const selectedCourseId = ref(null);
+const isModalOpen = ref(false)
+const selectedCourseId = ref(null)
 
 function showDetails(courseId) {
-  selectedCourseId.value = courseId;
-  isModalOpen.value = true;
+  selectedCourseId.value = courseId
+  isModalOpen.value = true
 }
 
 function closeModal() {
-  isModalOpen.value = false;
-  selectedCourseId.value = null;
+  isModalOpen.value = false
+  selectedCourseId.value = null
 }
-
 </script>
 
-
 <template>
-  <div class="relative">
+  <div class="relative flex-1 min-w-0">
     <CoursesComponent @show-details="showDetails" />
 
-    <!-- Modal -->
-    <div v-if="isModalOpen" class=" fixed inset-0 bg-[rgba(0,0,0,0.55)] z-[1000000] flex justify-center items-center">
-      <div class="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[70vh] overflow-y-auto relative p-[40px]">
-        <!-- Boutton pour fermer le modaal -->
-        <button @click="closeModal" class="absolute top- right-1 z-50 h-[40px] w-[40px] rounded-full flex justify-center items-center bg-red-500 text-white shadow-md transition-colors hover:bg-black  hover:text-red-500">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-
-        
-        <ProductDetailView v-if="selectedCourseId" :course-id="selectedCourseId" @close-modal="closeModal" />
+    <!-- Modal overlay -->
+    <transition name="modal">
+      <div v-if="isModalOpen" class="fixed inset-0 z-[1000] flex items-center justify-center p-4" @click.self="closeModal">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[88vh] overflow-y-auto p-10 z-10">
+          <button
+            @click="closeModal"
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-red-100 hover:text-red-500 dark:hover:bg-red-900/30 dark:hover:text-red-400 transition-all z-20"
+          >
+            <i class="fas fa-times text-sm"></i>
+          </button>
+          <ProductDetailView v-if="selectedCourseId" :course-id="selectedCourseId" @close-modal="closeModal" />
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
-
 </template>
 
-
 <style scoped>
-
-
+.modal-enter-active, .modal-leave-active { transition: all 0.25s ease; }
+.modal-enter-from, .modal-leave-to { opacity: 0; }
+.modal-enter-from .relative, .modal-leave-to .relative { transform: scale(0.95) translateY(10px); }
 </style>

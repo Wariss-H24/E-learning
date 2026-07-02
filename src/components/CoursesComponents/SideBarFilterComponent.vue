@@ -1,56 +1,56 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref } from 'vue'
 
-
-const props = defineProps({
-  tabCourses: Array
-})
-
+const props = defineProps({ tabCourses: Array })
 const selectedCategory = ref('')
 const emits = defineEmits(['update:category'])
 
-const categories = computed(() => [...new Set(props.tabCourses.map(el => el.category))])
+const categories = computed(() => {
+  const counts = {}
+  props.tabCourses.forEach(c => {
+    counts[c.category] = (counts[c.category] || 0) + 1
+  })
+  return Object.entries(counts).map(([name, count]) => ({ name, count }))
+})
 
-function selectCategory(cour) {
-  selectedCategory.value = cour
-  emits('update:category', cour)
+function selectCategory(cat) {
+  selectedCategory.value = cat
+  emits('update:category', cat)
 }
-
-
 </script>
 
-
 <template>
-  <div
-    class="p-4 bg-white dark:bg-[#23272f] rounded-lg shadow-md w-full lg:w-[25%] h-auto lg:h-[50vh] sticky top-[80px] flex flex-col justify-center items-center ml-0 lg:ml-[16px] dark:text-blue-100 border border-blue-100 dark:border-[#3a4152] transition-all duration-300">
-  <h3 class="font-semibold mb-2 text-3xl dark:text-blue-100">Catégories</h3>
+  <aside class="w-full lg:w-64 flex-shrink-0 p-4 lg:p-5">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 lg:sticky lg:top-20">
+      <h3 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
+        <i class="fas fa-filter mr-2 text-indigo-500"></i>Catégories
+      </h3>
 
-    <div class="flex flex-col gap-2">
-      <!-- Bouton Tout -->
-      <button @click="selectCategory('')" :class="[
-        'px-4 py-1 rounded-lg border text-sm font-medium transition w-full',
-        selectedCategory === ''
-          ? 'bg-blue-600 text-white border-blue-600 dark:bg-blue-700 dark:border-blue-700'
-          : 'bg-white dark:bg-[#2c3140] text-gray-700 dark:text-blue-100 border-blue-100 dark:border-[#3a4152] hover:bg-blue-100 dark:hover:bg-[#23272f]'
-      ]">
-        Tout
-      </button>
+      <div class="space-y-1">
+        <button
+          @click="selectCategory('')"
+          :class="selectedCategory === '' ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-500/30' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+          class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+        >
+          <span>Tous les cours</span>
+          <span :class="selectedCategory === '' ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'" class="text-xs px-2 py-0.5 rounded-full font-semibold">
+            {{ tabCourses.length }}
+          </span>
+        </button>
 
-      <!-- Boutons catégories -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
-        <button v-for="cat in categories" :key="cat" @click="selectCategory(cat)" :class="[
-          'px-4 py-1 rounded-lg border text-sm font-medium transition w-full',
-          selectedCategory === cat
-            ? 'bg-blue-600 text-white border-blue-600 dark:bg-blue-700 dark:border-blue-700'
-            : 'bg-white dark:bg-[#2c3140] text-gray-700 dark:text-blue-100 border-blue-100 dark:border-[#3a4152] hover:bg-blue-100 dark:hover:bg-[#23272f]'
-        ]" class="flex justify-center items-center">
-          {{ cat }}
+        <button
+          v-for="cat in categories"
+          :key="cat.name"
+          @click="selectCategory(cat.name)"
+          :class="selectedCategory === cat.name ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-500/30' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+          class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+        >
+          <span>{{ cat.name }}</span>
+          <span :class="selectedCategory === cat.name ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'" class="text-xs px-2 py-0.5 rounded-full font-semibold">
+            {{ cat.count }}
+          </span>
         </button>
       </div>
     </div>
-  </div>
-
+  </aside>
 </template>
-
-
-<style scoped></style>

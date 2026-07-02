@@ -1,472 +1,231 @@
 <script setup>
-import { ref, computed, provide } from "vue";
-import { useAuthStore } from '@/store';
-import { useRouter } from 'vue-router';
+import { ref } from 'vue'
+import { useAuthStore } from '@/store'
+import { useRouter } from 'vue-router'
 
-import bd from "../../Users.json";
-import mailConfirm from "../views/mailConfirmView.vue"
+const auth = useAuthStore()
+const router = useRouter()
 
+const formState = ref('connect')
+const showPassword = ref(false)
 
-// initialise EmailJS avec ta clé publique
-emailjs.init("DVu2Au30trEgw5z2u");
+// Connexion
+const email = ref('')
+const password = ref('')
 
-let baseDD = ref([]);
+// Inscription
+const pseudoI = ref('')
+const fullName = ref('')
+const emailI = ref('')
+const mdp1 = ref('')
+const mdp2 = ref('')
 
-function loadUsers() {
-  const stored = localStorage.getItem('base');
-  if (stored) {
-    try {
-      baseDD.value = JSON.parse(stored);
-    } catch (e) {
-      console.error("❌ Erreur JSON.parse :", e);
-      // réinitialise si jamais c’est corrompu
-      localStorage.removeItem('base');
-      baseDD.value = bd.Users;
-      localStorage.setItem('base', JSON.stringify(baseDD.value));
-    }
+const notification = ref('')
+
+function notify(type) {
+  notification.value = type
+  setTimeout(() => notification.value = '', 4000)
+}
+
+async function login() {
+  if (!email.value || !password.value) return notify('empty')
+  const ok = await auth.login(email.value, password.value)
+  if (ok) {
+    notify('success')
+    setTimeout(() => router.push({ name: 'Acceuil' }), 1500)
   } else {
-    baseDD.value= bd.Users;
-    localStorage.setItem('base', JSON.stringify(baseDD.value));
+    notify('error')
   }
 }
 
-loadUsers();
+async function inscription() {
+  if (!pseudoI.value || !fullName.value || !emailI.value || !mdp1.value || !mdp2.value) return notify('empty')
+  if (mdp1.value !== mdp2.value) return notify('password')
+  if (mdp1.value.length < 6) return notify('weakpassword')
 
-const code=ref(''); // cet variable va contenir le code générer et sera envoyer par props au composant de vérification
-const route=useRouter();
-const pseudo=ref();
-const mdp=ref();
-let formState=ref('connect');
-const cnid=ref('');
-const Insid=ref('');
-
-//variables d'inscription
-const pseudoI=ref();
-const entireName=ref();
-const mail=ref();
-const mdp1=ref();
-const mdp2=ref();
-//variable de notification
-const showBadgeNotification=ref('oui')
-
-// localStorage.removeItem('token', true)
-function login() {
-    loadUsers(); // Recharger les utilisateurs pour avoir les dernières infos
-    const index=baseDD.value.findIndex((e)=>e.name===pseudo.value && e.mot===mdp.value);
-    const auth = useAuthStore();
-    if (index<=-1) {
-        showBadgeNotification.value='j'
-        let set=setTimeout(() => {
-          showBadgeNotification.value='oui'
-        },3000);
+  const ok = await auth.register(emailI.value, mdp1.value, pseudoI.value, fullName.value)
+  if (ok) {
+    localStorage.setItem('pendingEmail', emailI.value)
+    notify('registered')
+    setTimeout(() => router.push({ name: 'confirm', params: { user: pseudoI.value } }), 1500)
+  } else {
+    // auth.error contient le message Supabase (ex: "User already registered")
+    if (auth.error?.includes('already registered') || auth.error?.includes('already been registered')) {
+      notify('emailexists')
     } else {
-        showBadgeNotification.value='r'
-        let set=setTimeout(() => {
-          showBadgeNotification.value='oui';
-          auth.login(true, { username: pseudo.value })
-          route.push({
-              name:'Acceuil',
-              params:{user:pseudo.value}
-          })
-        },3000);
+      notify('registererror')
     }
-}
-
-
-function authState() {
-  const status=JSON.parse(localStorage.getItem('state'));
-  if (status==='true') {
-    
   }
 }
 
-//fonction d'inscription
-function inscription(){
-        loadUsers(); // Recharger les utilisateurs pour s'assurer que la vérification est à jour
-        if ((pseudoI.value!=="") && (entireName.value!=="") && (mail.value!=="") && (mdp1.value!=="") && (mdp2.value!=="")) {
-            if (mdp1.value===mdp2.value) {
-                const existingPseudo=baseDD.value.findIndex((e)=>e.name===pseudoI.value);
-                const existingMail=baseDD.value.findIndex((e)=>e.email===mail.value);
-                if (existingPseudo!== -1) {
-                    showBadgeNotification.value='p'
-                    let set=setTimeout(() => {
-                      showBadgeNotification.value='oui'
-                    },3000);
-                }else if(existingMail!== -1){
-                  showBadgeNotification.value='mail'
-                  let set=setTimeout(() => {
-                    showBadgeNotification.value='oui'
-                  },3000);
-                }else{ 
-                    const newUser={
-                        name:pseudoI.value,
-                        mot:mdp1.value,
-                        nomEntier:entireName.value,
-                        email:mail.value,
-                    }
-                    baseDD.value.push(newUser);
-                    localStorage.setItem("base", JSON.stringify(baseDD.value));
-                    console.log("base après inscription :", JSON.parse(localStorage.getItem('base')));
-                    
-                    // formState.value='connect'; ici on revient au formulaire de connexion si inscription réussie
-                    showBadgeNotification.value='ir'
-                    let set=setTimeout(() => {
-                      showBadgeNotification.value='oui'
-                      route.push({
-                          name:'confirm',
-                          params:{user:pseudoI.value}
-                      })
-                    },3000);
-                }
-                
-            } else {
-                  showBadgeNotification.value='ie'
-                  let set=setTimeout(() => {
-                    showBadgeNotification.value='oui'
-                  },3000);
-            }
-        } else {
-            showBadgeNotification.value='ch'
-                  let set=setTimeout(() => {
-                    showBadgeNotification.value='oui'
-                  },3000);
-        }
-    const newUser={}
+const notifications = {
+  success:       { icon: 'fa-check-circle',       color: 'bg-emerald-500', text: 'Connexion réussie ! Redirection...' },
+  error:         { icon: 'fa-times-circle',       color: 'bg-red-500',     text: 'Email ou mot de passe incorrect.' },
+  registered:    { icon: 'fa-check-circle',       color: 'bg-emerald-500', text: 'Compte créé ! Vérifiez votre email 📧' },
+  emailexists:   { icon: 'fa-exclamation-circle', color: 'bg-amber-500',   text: 'Cet email est déjà utilisé.' },
+  registererror: { icon: 'fa-times-circle',       color: 'bg-red-500',     text: auth.error || 'Erreur lors de l\'inscription.' },
+  password:      { icon: 'fa-exclamation-circle', color: 'bg-orange-500',  text: 'Les mots de passe ne correspondent pas.' },
+  weakpassword:  { icon: 'fa-exclamation-circle', color: 'bg-orange-500',  text: 'Le mot de passe doit faire au moins 6 caractères.' },
+  empty:         { icon: 'fa-exclamation-circle', color: 'bg-orange-500',  text: 'Veuillez remplir tous les champs.' },
 }
-
-
-// export const confirm = defineStore('val', () => {
-  
-//   const courses = ref([...data.courses])
-//   let idNew = 200;
-
-
-//   //Fonction pour ajouter un cours
-//   function addCourse(course){
-//     const courseToAdd = {...course , id:idNew++}
-//     courses.value.unshift(courseToAdd)
-//   }
-  
-//   //Fonction pour modifier un cours
-//   function updateCourse(course){
-//     courses.value = courses.value.map(c => c.id === course.id ? {...course} : c)
-//   }
-
-//   //Fonction  pour 
-//   function removeCourse(id) {
-//     courses.value = courses.value.filter(c => c.id !== id)
-//   }
-
-//   return { courses, addCourse, updateCourse, removeCourse }
-// })
-
 </script>
 
 <template>
+  <!-- Toast -->
+  <transition name="toast">
+    <div v-if="notification" :class="notifications[notification]?.color" class="fixed top-20 right-5 z-[9999] flex items-center gap-3 px-4 py-3 rounded-xl text-white shadow-xl text-sm font-medium max-w-sm">
+      <i :class="['fas', notifications[notification]?.icon, 'text-lg flex-shrink-0']"></i>
+      <span>{{ notifications[notification]?.text }}</span>
+    </div>
+  </transition>
 
+  <div class="min-h-screen bg-slate-50 dark:bg-slate-900 flex">
 
-<!-- Notification -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='r'"
-        class="fixed top-20 right-5 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">🤩Félicitations !</p>
-          <p>Connexion réussi</p>
-        </div>
+    <!-- Left panel branding -->
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 flex-col justify-between p-12 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full"></div>
+        <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-white/5 rounded-full"></div>
       </div>
-    </Transition>
-
-    <!-- Notification élément existant -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='j'"
-        class="fixed top-20 right-5 bg-yellow-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Aie Aie😓😓 !</p>
-          <p>Compte inexistant!! inscrivez-vous ou vérifiez vos informations</p>
-        </div>
-      </div>
-    </Transition>
-
-
-
-
-
-    <!-- Notification Pseudo déjà prit -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='p'"
-        class="fixed top-20 right-5 bg-blue-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Désolé😓 !</p>
-          <p>Nom d'utilisateur déjà prit</p>
-        </div>
-      </div>
-    </Transition>
-
-
-    <!-- Notification Mail déjà prit-->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='mail'"
-        class="fixed top-20 right-5 bg-blue-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Désolé😓 !</p>
-          <p>Mail déjà utilisé</p>
-        </div>
-      </div>
-    </Transition>
-
-
-
-  <!-- Notification inscription réussi -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='ir'"
-        class="fixed top-20 right-5 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Bravo 😎‼</p>
-          <p>Inscription Réussie {{pseudoI.value}}</p>
-        </div>
-      </div>
-    </Transition>
-
-
-  <!-- Notification inscription Echoué -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='ie'"
-        class="fixed top-20 right-5 bg-orange-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Ewoo boss 😎‼</p>
-          <p>Mot de passe non conforme</p>
-        </div>
-      </div>
-    </Transition>
-
-
-  <!-- Notification inscription Echoué -->
-  <Transition name="slide-fade">
-      <div v-if="showBadgeNotification==='ch'"
-        class="fixed top-20 right-5 bg-orange-500 text-white p-4 rounded-lg shadow-lg z-50 flex items-center">
-        <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.33 14.414l-3.535-3.536 1.414-1.414L10.67 13.586l5.657-5.657 1.414 1.414-7.07 7.071z">
-          </path>
-        </svg>
-        <div>
-          <p class="font-bold">Pardon Boss 😥‼</p>
-          <p>Faut remplir tout les champs</p>
-        </div>
-      </div>
-    </Transition>
-
-
-
-  <div class="fixed inset-0 flex items-center justify-center bg-[#f7f8fa] dark:bg-[#23272f]">
-    <div class="flex flex-row items-center justify-center w-full max-w-3xl mx-auto">
-      <div class="flex-shrink-0 flex items-center justify-center h-full">
-        <img src="../assets/image/aunthentication/st1removebg-preview.png" alt="" style="max-width:220px; height:auto;" />
-      </div>
-      <div class="para flex items-center justify-center mx-4">
-        <transition name="para">
-          <div class="flex justify-center items-center rounded-4xl bg-[#eaeaeeaf]">
-            <div class="form">
-              <div
-                class="flex h-[50px] w-[50px] text-center text-2xl p-[60px] bg-blue-500 dark:bg-blue-600 text-white rounded-b-3xl shadow-[1px_5px_50px_rgba(0,0,0,0.25)]">
-              </div>
-<!-- Formulaire de connexion -->
-                <transition name="slide-fadeI">
-                      <div class="duration-[1s]" v-if="formState === 'connect'">
-                      <form  @submit.prevent="login">
-                        <div>
-                          <input class="bg-bgColor " v-model="pseudo" name="pseudo" type="text" placeholder="Nom d'utilisateur"
-                            required>
-                        </div>
-                        <div>
-                          <input class="bg-bgColor " v-model="mdp" name="mdp" type="password" placeholder="Mot de passe" required>
-                        </div>
-                        <div style="display:flex; justify-content: space-between;">
-                          <p><a>Mot de passe oublié</a></p>
-                          <div @click="formState = 'disconnect'" class="text-blue-500 dark:text-blue-600">S'inscrire?</div>
-                        </div>
-                        <button type="submit" class="bg-blue-500 dark:bg-blue-600">Se connecter</button>
-                      </form>
-                    </div>
-                </transition>
-<!--fin Formulaire de connexion -->
-
-<!-- Formulaire d'inscription -->
-                <transition name="slide-fade">
-                    <div class="duration-[1s]" v-if="formState === 'disconnect'">
-                    <form @submit.prevent="inscription">
-                      <div>
-                        <input class="bg-bgColor " v-model="pseudoI" name="pseudo" type="text" placeholder="Nom d'utilisateur"
-                          required>
-                      </div>
-                      <div>
-                        <input class="bg-bgColor " v-model="entireName" name="name" type="text" placeholder="Nom complet"
-                          required>
-                      </div>
-                      <div>
-                        <input class="bg-bgColor " v-model="mail" name="mdp" type="email" placeholder="Mail" required>
-                      </div>
-                      <div>
-                        <input class="bg-bgColor " v-model="mdp1" name="mdp" type="password" placeholder="Mot de passe" required>
-                      </div>
-                      <div>
-                        <input class="bg-bgColor " v-model="mdp2" name="mdp2" type="password"
-                          placeholder="Confirmez le mot de passe" required>
-                      </div>
-                      <div @click="formState = 'connect'" class="self-end mr-[50px] text-blue-500 dark:text-blue-400" :id="Insid">Connexion</div>
-                      <button type="submit"  class="bg-blue-500 dark:bg-blue-600">Inscription</button>
-                    </form>
-                  </div>
-                </transition>
-<!--fin Formulaire d'inscription -->
-
-              </div>
-            </div>
-          </transition>
+      <div class="relative z-10">
+        <div class="flex items-center gap-3 mb-12">
+          <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-white text-lg"></i>
           </div>
+          <span class="text-xl font-bold text-white">HighFive<span class="text-indigo-200">Academy</span></span>
+        </div>
+        <h1 class="text-4xl font-extrabold text-white leading-tight mb-4">Apprenez à votre<br/>rythme, partout.</h1>
+        <p class="text-indigo-200 text-lg leading-relaxed">Des centaines de cours créés par des experts pour vous aider à progresser dans votre carrière.</p>
       </div>
-      <div class="flex-shrink-0 flex items-center justify-center h-full">
-        <img src="../assets/image/aunthentication/st2removebg-preview.png" alt="" style="max-width:200px; height:auto;" />
+      <div class="relative z-10 grid grid-cols-3 gap-4">
+        <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+          <p class="text-2xl font-bold text-white">50+</p>
+          <p class="text-xs text-indigo-200 mt-1">Cours</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+          <p class="text-2xl font-bold text-white">1k+</p>
+          <p class="text-xs text-indigo-200 mt-1">Étudiants</p>
+        </div>
+        <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+          <p class="text-2xl font-bold text-white">4.8★</p>
+          <p class="text-xs text-indigo-200 mt-1">Note moyenne</p>
+        </div>
       </div>
     </div>
 
+    <!-- Right panel form -->
+    <div class="flex-1 flex items-center justify-center p-6 sm:p-10">
+      <div class="w-full max-w-md">
+
+        <!-- Mobile logo -->
+        <div class="flex items-center gap-2 mb-8 lg:hidden">
+          <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-white text-sm"></i>
+          </div>
+          <span class="text-lg font-bold text-slate-900 dark:text-white">HighFive<span class="text-indigo-500">Academy</span></span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex bg-slate-100 dark:bg-slate-800 rounded-xl p-1 mb-8">
+          <button
+            @click="formState = 'connect'"
+            :class="formState === 'connect' ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400'"
+            class="flex-1 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200"
+          >Connexion</button>
+          <button
+            @click="formState = 'disconnect'"
+            :class="formState === 'disconnect' ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400'"
+            class="flex-1 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200"
+          >Inscription</button>
+        </div>
+
+        <!-- Login -->
+        <transition name="form-slide" mode="out-in">
+          <div v-if="formState === 'connect'" key="login">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Bon retour ! 👋</h2>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Connectez-vous pour accéder à vos cours.</p>
+            <form @submit.prevent="login" class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Email</label>
+                <div class="relative">
+                  <i class="fas fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                  <input v-model="email" type="email" placeholder="vous@email.com" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 pl-10 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Mot de passe</label>
+                <div class="relative">
+                  <i class="fas fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                  <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 pl-10 pr-10 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+                  <button type="button" @click="showPassword = !showPassword" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                    <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'" class="text-sm"></i>
+                  </button>
+                </div>
+              </div>
+              <button
+                type="submit"
+                :disabled="auth.loading"
+                class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"
+              >
+                <i v-if="auth.loading" class="fas fa-spinner fa-spin"></i>
+                {{ auth.loading ? 'Connexion...' : 'Se connecter' }}
+              </button>
+            </form>
+          </div>
+
+          <!-- Register -->
+          <div v-else key="register">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Créer un compte 🚀</h2>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Rejoignez des milliers d'apprenants.</p>
+            <form @submit.prevent="inscription" class="space-y-4">
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Pseudo</label>
+                  <input v-model="pseudoI" type="text" placeholder="pseudo" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Nom complet</label>
+                  <input v-model="fullName" type="text" placeholder="Jean Dupont" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Email</label>
+                <div class="relative">
+                  <i class="fas fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                  <input v-model="emailI" type="email" placeholder="vous@email.com" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 pl-10 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Mot de passe <span class="text-slate-400 font-normal">(min. 6 caractères)</span></label>
+                <input v-model="mdp1" type="password" placeholder="••••••••" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Confirmer le mot de passe</label>
+                <input v-model="mdp2" type="password" placeholder="••••••••" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+              </div>
+              <button
+                type="submit"
+                :disabled="auth.loading"
+                class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"
+              >
+                <i v-if="auth.loading" class="fas fa-spinner fa-spin"></i>
+                {{ auth.loading ? 'Création...' : 'Créer mon compte' }}
+              </button>
+              <p class="text-xs text-slate-400 text-center">
+                En vous inscrivant, vous acceptez nos <a href="#" class="text-indigo-500 hover:underline">CGU</a> et notre <a href="#" class="text-indigo-500 hover:underline">politique de confidentialité</a>.
+              </p>
+            </form>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
 </template>
 
-
-
 <style scoped>
-.para-active{
-  transition: all 0.5s;
-}
-/* transition formulaire de connexion */
-.slide-fadeI-enter-active {
-  /* transition-delay: 0.5s; */
-  transition: all 2s;
-}
-
-.slide-fadeI-leave-active {
-  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fadeI-enter-from,
-.slide-fadeI-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
-
-/* transition formulaire d'inscription */
-
-.slide-fade-enter-active {
-  transition: all 2s;
-  /* transition-delay: 0.5s; */
-}
-
-.slide-fade-leave-active {
-  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-/* .page{
-  height: 100vh;
-  width: 100vw;
-} */
-.page>div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.para {
-  min-width: 350px;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-}
-
-.layout {
-  display: flex;
-  justify-content: center;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(97, 81, 81, 0.541);
-}
-
-form {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 350px;
-  padding: 20px;
-}
-
-form input {
-  font-size: 1.5rem;
-  height: 60px;
-  width: 100%;
-  border-radius: 15px;
-  padding: 12px;
-  z-index: 2;
-  outline: none;
-}
-
-form label {
-  font-size: 1.5rem;
-  padding: 12px;
-}
-
-button {
-  font-size: 1.8rem;
-  position: relative;
-  color: white;
-  left: 15%;
-  top: 50px;
-  width: 70%;
-
-  height: 50px;
-  border-bottom-left-radius: 250px;
-  border-bottom-right-radius: 250px;
-  box-shadow: inset 0 -10px 20px 1px rgba(97, 81, 81, 0.541);
-}
+.toast-enter-active, .toast-leave-active { transition: all 0.3s ease; }
+.toast-enter-from, .toast-leave-to { opacity: 0; transform: translateX(20px); }
+.form-slide-enter-active, .form-slide-leave-active { transition: all 0.2s ease; }
+.form-slide-enter-from { opacity: 0; transform: translateX(15px); }
+.form-slide-leave-to { opacity: 0; transform: translateX(-15px); }
 </style>

@@ -1,193 +1,200 @@
 <script setup>
 import { useAlertesStore, useAuthStore } from '@/store'
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-import { RouterLink, useRouter, useRoute } from 'vue-router'
- 
+import { RouterLink, useRouter } from 'vue-router'
+
 const store = useAlertesStore()
-
 const auth = useAuthStore()
-
 const router = useRouter()
- 
 
 const connecter = computed(() => auth.isAuthenticated)
 const utilisateur = computed(() => auth.user)
+const admin = computed(() => utilisateur.value?.user_metadata?.username === 'wariss_ia')
+const displayName = computed(() => utilisateur.value?.user_metadata?.full_name || utilisateur.value?.user_metadata?.username || utilisateur.value?.email || '')
+const profileImg = ref(null)
 
-
-
+const isDark = ref(false)
+const isOpenSearch = ref(false)
+const mobileMenuOpen = ref(false)
 
 onMounted(() => {
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark")
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark')
     isDark.value = true
   }
-  window.addEventListener("keydown", search)
+  profileImg.value = localStorage.getItem('image') || null
+  window.addEventListener('keydown', search)
+  // Sync image si modifiée dans le dashboard
+  window.addEventListener('storage', () => {
+    profileImg.value = localStorage.getItem('image') || null
+  })
 })
- 
-// Etat admin
-const admin = computed(() => utilisateur.value?.username === "moodolion")
-//  console.log(admin.value);
- 
-// Gestion du thème
-const isDark = ref(false)
+onUnmounted(() => {
+  window.removeEventListener('keydown', search)
+  window.removeEventListener('storage', () => {})
+})
+
 function toggleDarkMode() {
   isDark.value = !isDark.value
-  localStorage.setItem("theme", isDark.value ? "dark" : "light")
-  document.documentElement.classList.toggle(
-    "dark",
-    localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  )
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  document.documentElement.classList.toggle('dark', isDark.value)
 }
- 
-// Redirection quand on clique sur le profil
+
 function redirection() {
-  if (connecter.value) {
-    store.toggleMenu()
-  } else {
-    router.push({ name: 'auth' })
-  }
+  if (connecter.value) store.toggleMenu()
+  else router.push({ name: 'auth' })
 }
- 
-// Déconnexion
+
 function disconnect() {
   auth.logout()
-  store.isOpen = false // fermer le menu s'il est ouvert
-  router.push({ name: 'Acceuil' }) // redirection vers la page de login
+  store.isOpen = false
+  router.push({ name: 'Acceuil' })
 }
- 
-// Recherche (Ctrl+K)
-const isOpenSearch = ref(false)
+
 function search(e) {
-  if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
     e.preventDefault()
     isOpenSearch.value = !isOpenSearch.value
   }
 }
-onUnmounted(() => {
-  window.removeEventListener("keydown", search)
+
+const userInitials = computed(() => {
+  const name = displayName.value
+  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() || '?'
 })
- 
 </script>
 
 <template>
+  <nav class="sticky top-0 z-[100] bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-700/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
 
-  <nav
-    class="flex items-center justify-between p-4 bg-white dark:bg-[#23272f] shadow-md sticky top-0 z-[100] border-b border-blue-100 dark:border-[#3a4152] transition-colors duration-300">
-    <!-- Logo -->
-    <RouterLink to="/">
-      <div class="flex items-center space-x-2">
-      <i class="fas fa-graduation-cap text-blue-500 dark:text-blue-500 text-2xl"></i>
-      <span class="text-2xl font-extrabold text-blue-500 dark:text-blue-500">
-        HighFive <span class="text-gray-800 dark:text-blue-100">Academy</span>
-      </span>
-    </div>
-    </RouterLink>
-
-    <!-- Liens de navigation -->
-    <div class="hidden md:flex justify-center items-center gap-6 font-semibold flex-1">
-      <RouterLink to="/" class="nav-btn" active-class="nav-btn-active">Accueil</RouterLink>
-      <RouterLink to="/a-propos" class="nav-btn" active-class="nav-btn-active">À propos</RouterLink>
-      <RouterLink v-if="admin!==false" to="/admin" class="nav-btn" active-class="nav-btn-active">Admin</RouterLink>
-      <RouterLink to="/quiz-section" class="nav-btn" active-class="nav-btn-active">Quiz Section</RouterLink>
-    </div>
-
-
-    <!-- Zone droite : recherche, dark mode, profil -->
-  <div class="flex items-center justify-end space-x-4 w-[400px]">
-
-      <!-- Recherche -->
-      <div class="flex items-center relative">
-        <div v-if="isOpenSearch"
-          class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1 transition-colors duration-300">
-          <input type="text" placeholder="Rechercher..." v-model="store.searchTerm"
-            class="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 w-32 transition-colors duration-300" />
-        </div>
-        <button class="ml-2 text-gray-500 dark:text-blue-100 hover:text-blue-500 dark:hover:text-blue-300"
-          @click="isOpenSearch = !isOpenSearch">
-          <i class="fas fa-search transition-colors duration-300"></i>
-        </button>
-      </div>
-
-      <!-- Dark mode toggle -->
-      <button @click="toggleDarkMode"
-        class="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 dark:bg-[#2c3140] text-gray-600 dark:text-blue-100 hover:bg-blue-200 dark:hover:bg-[#3a4152] transition-colors duration-300">
-        <i v-if="!isDark" class="fas fa-moon"></i>
-        <span v-else class="material-icons">sunny</span>
-      </button>
-
-      <!-- Menu Profil déroulant -->
-      <div class="relative">
-        <button @click="redirection"
-          class="flex items-center gap-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-          <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
-
-        <!-- <button @click="store.toggleMenu"
-          class="flex items-center gap-2 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
-<<<<<<< HEAD
-          <div class="w-8 h-8 rounded-full bg-blue-500 dark:bg-blue-400 flex items-center justify-center text-white dark:text-gray-900"> -->
-
-
-            <i class="fas fa-user"></i>
+        <!-- Logo -->
+        <RouterLink to="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <i class="fas fa-graduation-cap text-white text-sm"></i>
           </div>
-          <span class="hidden md:block text-gray-700 dark:text-blue-100">Profil</span>
-        </button>
+          <span class="text-lg font-bold text-slate-900 dark:text-white">
+            HighFive<span class="text-indigo-500">Academy</span>
+          </span>
+        </RouterLink>
 
-        <!-- Menu déroulant -->
-        <div v-if="store.isOpen"
-          class="absolute right-0 mt-2 w-48 bg-white dark:bg-[#23272f] border border-blue-100 dark:border-[#3a4152] rounded-lg shadow-lg transition-colors duration-300">
-          <ul class="py-2">
-            <li>
-              <RouterLink v-if="admin!==false" to="/admin"
-                class="block px-4 py-2 text-gray-700 dark:text-blue-100 hover:bg-blue-100 dark:hover:bg-[#3a4152]"
-                @click="store.toggleMenu">
-                Mon compte
-              </RouterLink>
+        <!-- Nav links desktop -->
+        <div class="hidden md:flex items-center gap-1">
+          <RouterLink to="/" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-200" active-class="!text-indigo-600 dark:!text-indigo-400 !bg-indigo-50 dark:!bg-indigo-900/30">Accueil</RouterLink>
+          <RouterLink to="/a-propos" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-200" active-class="!text-indigo-600 dark:!text-indigo-400 !bg-indigo-50 dark:!bg-indigo-900/30">À propos</RouterLink>
+          <RouterLink v-if="admin" to="/admin" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-200" active-class="!text-indigo-600 dark:!text-indigo-400 !bg-indigo-50 dark:!bg-indigo-900/30">Admin</RouterLink>
+          <RouterLink to="/quiz-section" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-200" active-class="!text-indigo-600 dark:!text-indigo-400 !bg-indigo-50 dark:!bg-indigo-900/30">Quiz</RouterLink>
+        </div>
 
-              <RouterLink v-else to="/profil"
-                class="block px-4 py-2 text-gray-700 dark:text-blue-100 hover:bg-blue-100 dark:hover:bg-[#3a4152]"
-                @click="store.toggleMenu">
-                Mon compte
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink to="/parametres"
-                class="block px-4 py-2 text-gray-700 dark:text-blue-100 hover:bg-blue-100 dark:hover:bg-[#3a4152]"
-                @click="store.toggleMenu">
-                Paramètres
-              </RouterLink>
-            </li>
-            <li>
-              <RouterLink to='/'
-                class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                @click="disconnect">
-                Déconnexion
-              </RouterLink>
-            </li>
-          </ul>
+        <!-- Right zone -->
+        <div class="flex items-center gap-2">
+
+          <!-- Search -->
+          <div class="flex items-center">
+            <transition name="search-expand">
+              <div v-if="isOpenSearch" class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-1.5 mr-1 border border-slate-200 dark:border-slate-700">
+                <i class="fas fa-search text-slate-400 text-xs mr-2"></i>
+                <input
+                  type="text"
+                  placeholder="Rechercher un cours..."
+                  v-model="store.searchTerm"
+                  class="bg-transparent outline-none text-sm text-slate-700 dark:text-slate-200 placeholder-slate-400 w-44"
+                  autofocus
+                />
+                <kbd class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-xs text-slate-400 bg-slate-200 dark:bg-slate-700 rounded ml-2">⌘K</kbd>
+              </div>
+            </transition>
+            <button
+              @click="isOpenSearch = !isOpenSearch"
+              class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 transition-all duration-200"
+              :class="isOpenSearch ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-500' : ''"
+            >
+              <i class="fas fa-search text-sm"></i>
+            </button>
+          </div>
+
+          <!-- Dark mode -->
+          <button @click="toggleDarkMode" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200">
+            <i v-if="!isDark" class="fas fa-moon text-sm"></i>
+            <i v-else class="fas fa-sun text-sm text-amber-400"></i>
+          </button>
+
+          <!-- Profile -->
+          <div class="relative">
+            <button @click="redirection" class="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <div class="w-8 h-8 rounded-full overflow-hidden bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-xs font-bold shadow-md flex-shrink-0">
+                <img v-if="connecter && profileImg" :src="profileImg" class="w-full h-full object-cover" alt="avatar" />
+                <span v-else-if="connecter">{{ userInitials }}</span>
+                <i v-else class="fas fa-user text-xs"></i>
+              </div>
+              <span class="hidden md:block text-sm font-medium text-slate-700 dark:text-slate-200">
+                {{ connecter ? displayName : 'Connexion' }}
+              </span>
+              <i v-if="connecter" class="fas fa-chevron-down text-xs text-slate-400"></i>
+            </button>
+
+            <!-- Dropdown -->
+            <transition name="dropdown">
+              <div v-if="store.isOpen" class="absolute right-0 mt-2 w-52 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl overflow-hidden">
+                <div class="px-4 py-3 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full overflow-hidden bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                    <img v-if="profileImg" :src="profileImg" class="w-full h-full object-cover" alt="avatar" />
+                    <span v-else>{{ userInitials }}</span>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-white truncate">{{ displayName }}</p>
+                    <p class="text-xs text-slate-400 truncate">{{ utilisateur?.email }}</p>
+                  </div>
+                </div>
+                <ul class="py-1">
+                  <li>
+                    <RouterLink :to="admin ? '/admin' : '/profil'" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors" @click="store.toggleMenu">
+                      <i class="fas fa-user-circle w-4"></i> Mon compte
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <RouterLink to="/parametres" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors" @click="store.toggleMenu">
+                      <i class="fas fa-cog w-4"></i> Paramètres
+                    </RouterLink>
+                  </li>
+                  <li class="border-t border-slate-100 dark:border-slate-700 mt-1 pt-1">
+                    <button @click="disconnect" class="flex items-center gap-2.5 px-4 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors w-full text-left">
+                      <i class="fas fa-sign-out-alt w-4"></i> Déconnexion
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </transition>
+          </div>
+
+          <!-- Mobile menu btn -->
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200">
+            <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-sm"></i>
+          </button>
         </div>
       </div>
 
+      <!-- Mobile menu -->
+      <transition name="mobile-menu">
+        <div v-if="mobileMenuOpen" class="md:hidden border-t border-slate-200 dark:border-slate-700 py-3 space-y-1">
+          <RouterLink to="/" class="block px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 rounded-lg transition-colors" @click="mobileMenuOpen = false">Accueil</RouterLink>
+          <RouterLink to="/a-propos" class="block px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 rounded-lg transition-colors" @click="mobileMenuOpen = false">À propos</RouterLink>
+          <RouterLink v-if="admin" to="/admin" class="block px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 rounded-lg transition-colors" @click="mobileMenuOpen = false">Admin</RouterLink>
+          <RouterLink to="/quiz-section" class="block px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 rounded-lg transition-colors" @click="mobileMenuOpen = false">Quiz</RouterLink>
+        </div>
+      </transition>
     </div>
   </nav>
 </template>
+
 <style scoped>
-/* Boutons de navigation centrés et style actif bleu */
-.nav-btn {
-  color: #374151;
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.5rem;
-  transition: background 0.2s, color 0.2s;
-  font-weight: 600;
-  display: inline-block;
-}
-.nav-btn:hover {
-  background: #e0e7ff;
-  color: #2563eb;
-}
-.nav-btn-active {
-  background: #2563eb;
-  color: #fff !important;
-  box-shadow: 0 2px 8px #2563eb33;
-}
+.search-expand-enter-active, .search-expand-leave-active { transition: all 0.2s ease; }
+.search-expand-enter-from, .search-expand-leave-to { opacity: 0; transform: scaleX(0.8); }
+
+.dropdown-enter-active, .dropdown-leave-active { transition: all 0.15s ease; }
+.dropdown-enter-from, .dropdown-leave-to { opacity: 0; transform: translateY(-8px) scale(0.95); }
+
+.mobile-menu-enter-active, .mobile-menu-leave-active { transition: all 0.2s ease; }
+.mobile-menu-enter-from, .mobile-menu-leave-to { opacity: 0; transform: translateY(-10px); }
 </style>

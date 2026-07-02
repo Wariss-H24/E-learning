@@ -1,20 +1,43 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
 @theme {
-  --color-bgColor:  #FAFAFBFF;
-  /* Sidebar bg */
-  --color-sidebarColor:  #00000000;
-  /* la couleur violet */
-  --color-blueColor:  #636AE8FF;
-  /* la couleur red */
-  --color-redColor: #E8618CFF;
-  /* Black h1 */
-  --color-blackColor: #00000000;
-  /*paragraphe dcathologue  */
-  --color-para1Color: #565D6DFF;
-  /*paragraphe detail cours  */
-  --color-para2Color: #171A1FFF;
-  --color-adminBg: #F2F2FDFF;
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-primary-light: #818cf8;
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+
+  --color-bgColor: #f8fafc;
+  --color-sidebarColor: #ffffff;
+  --color-blueColor: #6366f1;
+  --color-redColor: #f43f5e;
+  --color-blackColor: #0f172a;
+  --color-para1Color: #64748b;
+  --color-para2Color: #1e293b;
+  --color-adminBg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
 }
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.dark body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
 

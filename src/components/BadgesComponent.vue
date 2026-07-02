@@ -1,43 +1,37 @@
 <script setup>
-
 const props = defineProps({
-  earnedBadges: {
-    type: Array,
-    required: true
-  }
-});
-
-const gadgesDiv = "gadgesDiv";
+  earnedBadges: { type: Array, required: true }
+})
 </script>
 
 <template>
-    <div>
-        <h2 class="font-bold text-[22px] my-5 dark:text-gray-100">Badges obtenus</h2>
-        <div v-if="props.earnedBadges.length > 0" class="flex gap-4 items-center text-center" :class="gadgesDiv">
-            <div v-for="badge in props.earnedBadges" :key="badge.name"
-                class="bg-bgColor dark:bg-[#23272f] px-5 py-3 rounded-[10px] shadow-xs shadow-black/15 w-[258px] h-[144px] flex flex-col justify-center items-center border border-gray-100 dark:border-gray-700">
-                <div class="text-redColor" v-html="badge.icon"></div>
-                <h2 class="dark:text-blue-200">{{ badge.name }}</h2>
-                <p class="dark:text-gray-300">{{ badge.description }}</p>
-            </div>
+  <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-6">
+    <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4">
+      <i class="fas fa-medal text-amber-500 mr-2"></i>Badges obtenus
+    </h2>
+
+    <div v-if="props.earnedBadges.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        v-for="badge in props.earnedBadges"
+        :key="badge.name"
+        class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-700 transition-colors"
+      >
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-md shadow-indigo-500/20">
+          <span v-html="badge.icon"></span>
         </div>
-        <div v-else class="text-center p-10 text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-[#65676b80] rounded-lg">
-            <p>Vous n'avez pas encore obtenu de badges. Terminez des cours pour en débloquer !</p>
+        <div class="min-w-0">
+          <p class="text-sm font-bold text-slate-900 dark:text-white truncate">{{ badge.name }}</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 truncate">{{ badge.description }}</p>
         </div>
+      </div>
     </div>
+
+    <div v-else class="flex flex-col items-center justify-center py-10 text-center">
+      <div class="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-3">
+        <i class="fas fa-medal text-xl text-slate-300 dark:text-slate-600"></i>
+      </div>
+      <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Aucun badge pour l'instant</p>
+      <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Terminez des cours pour débloquer vos premiers badges !</p>
+    </div>
+  </div>
 </template>
-
-<style scoped>
-.gadgesDiv h2 {
-    font-weight: 600;
-}
-
-.gadgesDiv {
-    flex-wrap: wrap;
-}
-
-.gadgesDiv p {
-    color: #565D6DFF;
-    font-size: 14px;
-}
-</style>

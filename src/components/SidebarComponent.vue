@@ -1,131 +1,65 @@
 <script>
-
-import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
 
 export default {
   setup() {
-    const isOpen = ref(false);
-    function toggleSidebar() {
-      isOpen.value = !isOpen.value;
+    const isOpen = ref(false)
+    return {
+      isOpen,
+      toggleSidebar: () => isOpen.value = !isOpen.value,
+      closeSidebar: () => isOpen.value = false,
     }
-    function closeSidebar() {
-      isOpen.value = false;
-    }
-    return { isOpen, toggleSidebar, closeSidebar };
   }
 }
-
 </script>
 
 <template>
-  <!-- Bouton menu hamburger visible sur mobile/tablette -->
-  <button @click="toggleSidebar" class="lg:hidden fixed top-40 right-4 z-[100000] bg-blue-500 text-white rounded-full p-2 shadow-md">
-    <i class="fas fa-bars text-xl"></i>
+  <!-- Mobile toggle -->
+  <button
+    @click="toggleSidebar"
+    class="lg:hidden fixed bottom-6 left-4 z-[99999] w-12 h-12 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full shadow-xl flex items-center justify-center transition-all"
+  >
+    <i :class="isOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
   </button>
 
-  <!-- Overlay et sidebar mobile/tablette -->
+  <!-- Mobile overlay -->
   <transition name="fade">
-    <div v-if="isOpen" class="fixed inset-0 bg-[rgba(0,0,0,0.5)] bg-opacity-40 z-40 lg:hidden" @click="closeSidebar"></div>
+    <div v-if="isOpen" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden" @click="closeSidebar"></div>
   </transition>
+
+  <!-- Mobile sidebar -->
   <transition name="slide">
-    <aside
-      v-if="isOpen"
-      class="fixed top-[100px] left-0 h-full w-64 bg-white dark:bg-[#23272f] shadow-md transition-colors duration-300 border-r border-blue-100 dark:border-[#3a4152] z-50 lg:hidden"
-    >
-      <div class="flex flex-col h-full py-6">
-        <!-- ...existing code... -->
-        <div class="px-4 py-2">
-          <RouterLink to="/" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]" @click="closeSidebar">
-            <i class="fas fa-home w-5 h-5 mr-3"></i>
-            Accueil
-          </RouterLink>
-        </div>
-        <div class="px-4 py-2">
-          <RouterLink to="/lessons/:id" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]" @click="closeSidebar">
-            <i class="fas fa-book w-5 h-5 mr-3"></i>
-            Cours
-          </RouterLink>
-        </div>
-        <div class="border-t border-blue-100 dark:border-[#3a4152] my-2 mx-4"></div>
-        <div class="px-4 py-2">
-          <RouterLink to="/profil" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]" @click="closeSidebar">
-            <i class="fas fa-user w-5 h-5 mr-3"></i>
-            Profil Utilisateur
-          </RouterLink>
-        </div>
-        <div class="border-t border-blue-100 dark:border-[#3a4152] my-2 mx-4"></div>
-        <div class="px-4 py-2">
-          <RouterLink to="" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]" @click="closeSidebar">
-            <i class="fas fa-cog w-5 h-5 mr-3"></i>
-            GESTION
-          </RouterLink>
-        </div>
-        <div class="px-4 py-2">
-          <RouterLink to="" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]" @click="closeSidebar">
-            <i class="fas fa-users-cog w-5 h-5 mr-3"></i>
-            Administration
-          </RouterLink>
-        </div>
-      </div>
+    <aside v-if="isOpen" class="fixed top-16 left-0 h-[calc(100vh-4rem)] w-60 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-50 lg:hidden overflow-y-auto">
+      <nav class="p-4 space-y-1">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-3">Navigation</p>
+        <RouterLink to="/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" @click="closeSidebar"><i class="fas fa-home w-4"></i>Accueil</RouterLink>
+        <RouterLink to="/a-propos" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" @click="closeSidebar"><i class="fas fa-info-circle w-4"></i>À propos</RouterLink>
+        <RouterLink to="/quiz-section" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" @click="closeSidebar"><i class="fas fa-brain w-4"></i>Quiz</RouterLink>
+        <div class="border-t border-slate-100 dark:border-slate-700 my-3"></div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-3">Compte</p>
+        <RouterLink to="/profil" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" @click="closeSidebar"><i class="fas fa-user w-4"></i>Mon profil</RouterLink>
+      </nav>
     </aside>
   </transition>
 
-  <!-- Sidebar desktop -->
-  <aside class="container w-64 min-h-screen bg-white dark:bg-[#23272f] shadow-md transition-colors duration-300 border-r border-blue-100 dark:border-[#3a4152] hidden lg:block">
-    <div class="flex flex-col h-full py-6">
-      <!-- ...existing code... -->
-      <div class="px-4 py-2">
-        <RouterLink to="/" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]">
-          <i class="fas fa-home w-5 h-5 mr-3"></i>
-          Accueil
-        </RouterLink>
-      </div>
-      <div class="px-4 py-2">
-        <RouterLink to="/lessons/:id" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]">
-          <i class="fas fa-book w-5 h-5 mr-3"></i>
-          Cours
-        </RouterLink>
-      </div>
-      <div class="border-t border-blue-100 dark:border-[#3a4152] my-2 mx-4"></div>
-      <div class="px-4 py-2">
-        <RouterLink to="/profil" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]">
-          <i class="fas fa-user w-5 h-5 mr-3"></i>
-          Profil Utilisateur
-        </RouterLink>
-      </div>
-      <div class="border-t border-blue-100 dark:border-[#3a4152] my-2 mx-4"></div>
-      <div class="px-4 py-2">
-        <RouterLink to="" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]">
-          <i class="fas fa-cog w-5 h-5 mr-3"></i>
-          GESTION
-        </RouterLink>
-      </div>
-      <div class="px-4 py-2">
-        <RouterLink to="" class="flex items-center px-3 py-2 text-gray-700 dark:text-blue-100 rounded-lg transition-colors hover:bg-blue-100 dark:hover:bg-[#3a4152] border border-transparent dark:border-[#2c3140]">
-          <i class="fas fa-users-cog w-5 h-5 mr-3"></i>
-          Administration
-        </RouterLink>
-      </div>
-    </div>
+  <!-- Desktop sidebar -->
+  <aside class="hidden lg:flex flex-col w-56 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 min-h-[calc(100vh-4rem)]">
+    <nav class="p-4 space-y-1 sticky top-16">
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-3">Navigation</p>
+      <RouterLink to="/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" active-class="!bg-indigo-50 dark:!bg-indigo-900/30 !text-indigo-600 dark:!text-indigo-400"><i class="fas fa-home w-4"></i>Accueil</RouterLink>
+      <RouterLink to="/a-propos" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" active-class="!bg-indigo-50 dark:!bg-indigo-900/30 !text-indigo-600 dark:!text-indigo-400"><i class="fas fa-info-circle w-4"></i>À propos</RouterLink>
+      <RouterLink to="/quiz-section" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" active-class="!bg-indigo-50 dark:!bg-indigo-900/30 !text-indigo-600 dark:!text-indigo-400"><i class="fas fa-brain w-4"></i>Quiz</RouterLink>
+      <div class="border-t border-slate-100 dark:border-slate-700 my-3"></div>
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-3">Compte</p>
+      <RouterLink to="/profil" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200" active-class="!bg-indigo-50 dark:!bg-indigo-900/30 !text-indigo-600 dark:!text-indigo-400"><i class="fas fa-user w-4"></i>Mon profil</RouterLink>
+    </nav>
   </aside>
 </template>
 
 <style scoped>
-  .container {
-    margin-top: 0.1rem;
-    border-top: 1px solid rgba(128, 128, 128, 0.199);
-  }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.2s;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-  .slide-enter-active, .slide-leave-active {
-    transition: transform 0.3s;
-  }
-  .slide-enter, .slide-leave-to {
-    transform: translateX(-100%);
-  }
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+.slide-enter-active, .slide-leave-active { transition: transform 0.25s ease; }
+.slide-enter-from, .slide-leave-to { transform: translateX(-100%); }
 </style>

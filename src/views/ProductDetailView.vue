@@ -1,96 +1,121 @@
 <script setup>
-import { ref, computed } from 'vue';
-import coursesData from '@/newCourses.json';
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/store'
+import coursesData from '@/newCourses.json'
 
 const props = defineProps({
-  courseId: {
-    type: [String, Number],
-    required: true
+  courseId: { type: [String, Number], required: true }
+})
+const emit = defineEmits(['close-modal'])
+
+const auth = useAuthStore()
+const router = useRouter()
+const course = computed(() => coursesData.courses.find(c => c.id == props.courseId))
+
+function startCourse() {
+  emit('close-modal')
+  if (auth.isAuthenticated) {
+    router.push(`/lessons/${course.value.id}`)
+  } else {
+    router.push({ name: 'auth' })
   }
-});
-
-const emit = defineEmits(['close-modal']);
-
-const course = computed(() => {
-  return coursesData.courses.find(c => c.id == props.courseId);
-});
+}
 </script>
 
 <template>
-  <div v-if="course" class="container mx-auto p-4">
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img :src="course.thumbnail" :alt="course.title" class="w-full object-cover">
-      <div class="p-6">
-        <h1 class="text-4xl font-bold mb-2">{{ course.title }}</h1>
-        <span class="inline-block bg-redColor text-white text-sm font-semibold px-3 py-1 rounded-full mb-4">
+  <div v-if="course">
+    <!-- Hero image -->
+    <div class="relative -mx-10 -mt-10 mb-6 h-52 overflow-hidden rounded-t-lg">
+      <img :src="course.thumbnail" :alt="course.title" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+      <div class="absolute bottom-4 left-6 right-6">
+        <span class="inline-block bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
           {{ course.category }}
         </span>
-        <p class="text-gray-700 mb-4 text-lg">{{ course.description }}</p>
+        <h1 class="text-2xl font-bold text-white leading-tight">{{ course.title }}</h1>
+      </div>
+    </div>
 
-        <div class="flex items-center mb-4">
-          <span class="text-yellow-500 mr-1">★</span>
-          <span class="text-lg font-semibold">{{ course.rating }}</span>
-          <span class="text-gray-600 ml-2">({{ course.enrolledStudents }} étudiants)</span>
+    <!-- Rating & stats bar -->
+    <div class="flex flex-wrap items-center gap-4 mb-5 pb-5 border-b border-slate-100 dark:border-slate-700">
+      <div class="flex items-center gap-1.5">
+        <div class="flex">
+          <i v-for="n in 5" :key="n" class="fas fa-star text-xs" :class="n <= Math.round(course.rating || 4) ? 'text-amber-400' : 'text-slate-200'"></i>
         </div>
+        <span class="text-sm font-bold text-amber-600">{{ course.rating }}</span>
+        <span class="text-sm text-slate-400">({{ course.enrolledStudents }} étudiants)</span>
+      </div>
+      <span class="text-sm text-slate-500 dark:text-slate-400"><i class="fas fa-clock mr-1 text-indigo-400"></i>{{ course.duration }}</span>
+      <span class="text-sm text-slate-500 dark:text-slate-400"><i class="fas fa-language mr-1 text-indigo-400"></i>{{ course.language }}</span>
+      <span v-if="course.certificate" class="flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400 font-medium">
+        <i class="fas fa-certificate"></i> Certificat inclus
+      </span>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <p><span class="font-semibold">Instructeur:</span> {{ course.instructor }}</p>
-            <p><span class="font-semibold">Niveau:</span> {{ course.level }}</p>
-            <p><span class="font-semibold">Langue:</span> {{ course.language }}</p>
-            <p><span class="font-semibold">Durée:</span> {{ course.duration }}</p>
-            <p><span class="font-semibold">Temps estimé:</span> {{ course.estimatedTime }}</p>
-            <p><span class="font-semibold">Certificat:</span> {{ course.certificate ? 'Oui' : 'Non' }}</p>
-          </div>
-          <div>
-            <!-- <div class="flex items-baseline">
-                <p class="text-4xl font-bold text-green-700">{{ course.price === 0 ? 'Gratuit' : course.price + ' €' }}</p>
-                <p v-if="course.price !== 0 && course.originalPrice" class="ml-2 text-gray-500 line-through">{{ course.originalPrice }} €</p>
-            </div> -->
-            <p class="text-sm text-gray-500">Créé le: {{ course.createdDate }}</p>
-            <p class="text-sm text-gray-500">Mis à jour le: {{ course.updatedDate }}</p>
-          </div>
-        </div>
+    <!-- Description -->
+    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">{{ course.description }}</p>
 
-        <div class="mb-6">
-          <h2 class="text-2xl font-semibold mb-2">Prérequis</h2>
-          <ul class="list-disc list-inside">
-            <li v-for="(req, index) in course.prerequisites" :key="index">{{ req }}</li>
-          </ul>
-        </div>
+    <!-- Info grid -->
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-3">
+        <p class="text-xs text-slate-400 mb-0.5">Instructeur</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-white">{{ course.instructor }}</p>
+      </div>
+      <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-3">
+        <p class="text-xs text-slate-400 mb-0.5">Niveau</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-white">{{ course.level }}</p>
+      </div>
+      <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-3">
+        <p class="text-xs text-slate-400 mb-0.5">Temps estimé</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-white">{{ course.estimatedTime }}</p>
+      </div>
+      <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-3">
+        <p class="text-xs text-slate-400 mb-0.5">Mis à jour</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-white">{{ course.updatedDate }}</p>
+      </div>
+    </div>
 
-        <div class="mb-6">
-          <h2 class="text-2xl font-semibold mb-2">Ce que vous apprendrez</h2>
-          <ul class="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-x-6">
-            <li v-for="lesson in course.lessons" :key="lesson.id">{{ lesson.title }}</li>
-          </ul>
-        </div>
+    <!-- Prérequis -->
+    <div class="mb-5" v-if="course.prerequisites?.length">
+      <h2 class="text-base font-bold text-slate-900 dark:text-white mb-2">Prérequis</h2>
+      <ul class="space-y-1.5">
+        <li v-for="(req, i) in course.prerequisites" :key="i" class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+          <i class="fas fa-check-circle text-indigo-500 mt-0.5 flex-shrink-0"></i>{{ req }}
+        </li>
+      </ul>
+    </div>
 
-        <div class="mb-6">
-          <h2 class="text-2xl font-semibold mb-2">Tags</h2>
-          <div class="flex flex-wrap gap-2">
-            <span v-for="(tag, index) in course.tags" :key="index"
-              class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">#{{ tag }}</span>
-          </div>
-        </div>
-
-        <div class="mt-8">
-          <router-link :to="`/lessons/${course.id}`" @click="emit('close-modal')"
-            class="bg-blueColor text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 text-lg transition-colors">
-            Commencer la formation
-          </router-link>
+    <!-- Ce que vous apprendrez -->
+    <div class="mb-5">
+      <h2 class="text-base font-bold text-slate-900 dark:text-white mb-2">Ce que vous apprendrez</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+        <div v-for="lesson in course.lessons" :key="lesson.id" class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+          <i class="fas fa-play-circle text-indigo-500 mt-0.5 flex-shrink-0 text-xs"></i>{{ lesson.title }}
         </div>
       </div>
     </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mb-6">
+      <span v-for="(tag, i) in course.tags" :key="i" class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-medium px-2.5 py-1 rounded-full">
+        #{{ tag }}
+      </span>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
+      <button @click="emit('close-modal')" class="flex-1 py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+        Fermer
+      </button>
+      <button @click="startCourse()" class="flex-1 py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold text-center transition-colors shadow-lg shadow-indigo-500/30">
+        <i class="fas fa-play mr-2"></i>{{ auth.isAuthenticated ? 'Commencer la formation' : 'Se connecter pour commencer' }}
+      </button>
+    </div>
   </div>
-  <div v-else class="text-center p-10">
-    <p class="text-xl">Cours non trouvé.</p>
+
+  <div v-else class="flex flex-col items-center justify-center py-16">
+    <i class="fas fa-exclamation-circle text-4xl text-slate-300 mb-3"></i>
+    <p class="text-slate-500">Cours non trouvé.</p>
   </div>
 </template>
-
-<style scoped>
-/* Styles additionnels pour améliorer la présentation */
-.container {
-  max-width: 1200px;
-}
-</style>
