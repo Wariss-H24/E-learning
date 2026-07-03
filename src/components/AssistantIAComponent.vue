@@ -145,7 +145,7 @@ function newChat() {
             <div class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-3">
               <i class="fas fa-robot text-2xl text-indigo-500"></i>
             </div>
-            <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">Bonjour ! 👋</p>
+            <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">Bonjour ! </p>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Je suis votre assistant IA. Posez-moi des questions sur les cours, les technologies ou votre apprentissage.</p>
             <div class="mt-4 space-y-2 w-full">
               <button

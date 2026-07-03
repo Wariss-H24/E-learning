@@ -142,7 +142,7 @@ const notifications = {
         <!-- Login -->
         <transition name="form-slide" mode="out-in">
           <div v-if="formState === 'connect'" key="login">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Bon retour ! 👋</h2>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Bon retour ! </h2>
             <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Connectez-vous pour accéder à vos cours.</p>
             <form @submit.prevent="login" class="space-y-4">
               <div>
@@ -175,7 +175,7 @@ const notifications = {
 
           <!-- Register -->
           <div v-else key="register">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Créer un compte 🚀</h2>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Créer un compte</h2>
             <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Rejoignez des milliers d'apprenants.</p>
             <form @submit.prevent="inscription" class="space-y-4">
               <div class="grid grid-cols-2 gap-3">
