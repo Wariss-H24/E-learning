@@ -1,10 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import CoursesComponent from '@/components/CoursesComponents/CoursesComponent.vue'
 import ProductDetailView from '@/views/ProductDetailView.vue'
 
+const route = useRoute()
 const isModalOpen = ref(false)
 const selectedCourseId = ref(null)
+const showCategories = computed(() => route.path === '/cours')
 
 function showDetails(courseId) {
   selectedCourseId.value = courseId
@@ -19,7 +22,7 @@ function closeModal() {
 
 <template>
   <div class="relative flex-1 min-w-0">
-    <CoursesComponent @show-details="showDetails" />
+    <CoursesComponent :show-categories="showCategories" @show-details="showDetails" />
 
     <!-- Modal overlay -->
     <transition name="modal">

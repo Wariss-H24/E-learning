@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useAuthStore, useAlertesStore } from '@/store'
 
 const auth = useAuthStore()
-const props = defineProps({ tabCourses: Array })
+const props = defineProps({ tabCourses: Array, showCategories: { type: Boolean, default: false } })
 const router = useRouter()
 const emit = defineEmits(['show-details'])
 const store = useAlertesStore()
@@ -55,7 +55,7 @@ function getLevelColor(level) {
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          <span class="absolute top-3 left-3 bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg">
+          <span v-if="props.showCategories && cours.category" class="absolute top-3 left-3 bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg">
             {{ cours.category }}
           </span>
           <span v-if="cours.price === 0" class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
@@ -117,7 +117,7 @@ function getLevelColor(level) {
         <i class="fas fa-search text-2xl text-slate-400"></i>
       </div>
       <h3 class="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-1">Aucun cours trouvé</h3>
-      <p class="text-sm text-slate-400">Essayez d'autres mots-clés ou catégories</p>
+      <p class="text-sm text-slate-400">Essayez d'autres mots-clés</p>
     </div>
   </div>
 </template>

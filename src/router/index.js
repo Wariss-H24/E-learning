@@ -33,6 +33,11 @@ const routes= [
       component: AboutUsView,
     },
     {
+      path: '/cours',
+      name: 'cours',
+      component: () => import('@/views/ProductsView.vue'),
+    },
+    {
       path: '/admin',
       name: 'Admin',
       component: AdminView,
