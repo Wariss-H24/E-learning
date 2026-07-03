@@ -17,10 +17,10 @@
             La plateforme d'apprentissage en ligne pour développer vos compétences et booster votre carrière.
           </p>
           <div class="flex gap-3">
-            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-200 text-sm"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
 
@@ -40,13 +40,13 @@
           <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Ressources</h4>
           <ul class="space-y-2.5">
             <li><RouterLink to="/a-propos" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">À propos</RouterLink></li>
-            <li><a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">Blog</a></li>
-            <li><a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">Formateurs</a></li>
+            <!-- <li><a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">Blog</a></li> -->
+            <!-- <li><a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">Formateurs</a></li> -->
             <li><a href="#" class="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200">Aide & Support</a></li>
           </ul>
         </div>
 
-        <!-- Newsletter -->
+        <!-- Newsletter (removed) -->
         <div>
           <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Newsletter</h4>
           <p class="text-sm text-slate-400 mb-3">Recevez les nouveaux cours et offres en avant-première.</p>
