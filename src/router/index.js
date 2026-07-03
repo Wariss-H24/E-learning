@@ -102,6 +102,11 @@ const routes= [
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   linkActiveClass : "lien-actif", //spécifie la classe CSS a appliquer aux liens actifs dans la barre de navigation.Lorsqu’un lien est actif, il recevra cette classe CSS.
+  // Ensure the page scrolls to top on navigation (and restore saved position on back/forward)
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    return { left: 0, top: 0 }
+  }
   })
   router.beforeEach(async (to, from, next) => {
   const { data: { session } } = await supabase.auth.getSession()
@@ -119,6 +124,10 @@ const routes= [
   }
 })
 
-
+router.afterEach(() => {
+  window.requestAnimationFrame(() => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'auto' })
+  })
+})
 
 export default router
